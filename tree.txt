@@ -2288,6 +2288,6 @@ EditoUi.js 1087 EditorUi.prototype.exportImage = function(scale, transparentBack
 saveData -> 3505
 1. a limited list of component
 2. mxgraph.jar
-3. barcode
+3. barcode / type option
 4. xml to json
 
