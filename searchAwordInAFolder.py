@@ -10,10 +10,9 @@ def searchAWord(filename, old_str):
             lineCounter += 1
             if old_str in line:
                 if not WROTEFILENAME: 
-                    file_data.write("# "+filename+'{\n')
+                    file_data.write("#e "+filename+'\n')
                     WROTEFILENAME = True
                 file_data.write(str(lineCounter) + ": " + line)
-    if WROTEFILENAME: file_data.write('}\n')
     file_data.close()
 
 def traverseFolder(search_folder,searchStr):

@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "atlas-viewer.min.js 2032"
+!git commit -m "Editor.js:1729"
 !git add .
 !git push -u origin master
 

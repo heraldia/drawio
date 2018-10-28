@@ -1725,7 +1725,9 @@ PageSetupDialog.addPageFormatPanel = function(div, namePostfix, pageFormat, page
  */
 PageSetupDialog.getFormats = function()
 {
-	return [{key: 'letter', title: 'US-Letter (8,5" x 11")', format: mxConstants.PAGE_FORMAT_LETTER_PORTRAIT},
+	return [
+            {key:"7inch",title:'ESL 7 inch (5" x 7")',format:new mxRectangle(0,0,500,700)},
+            {key: 'letter', title: 'US-Letter (8,5" x 11")', format: mxConstants.PAGE_FORMAT_LETTER_PORTRAIT},
 	        {key: 'legal', title: 'US-Legal (8,5" x 14")', format: new mxRectangle(0, 0, 850, 1400)},
 	        {key: 'tabloid', title: 'US-Tabloid (279 mm x 432 mm)', format: new mxRectangle(0, 0, 1100, 1700)},
 	        {key: 'a0', title: 'A0 (841 mm x 1189 mm)', format: new mxRectangle(0, 0, 3300, 4681)},
