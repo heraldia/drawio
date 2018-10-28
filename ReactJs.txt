@@ -1,6 +1,11 @@
+!git pull
 !git add .
-!git commit -m "paperSize7inch"
+!git commit -m "app.min.js not affect UI paper size"
 !git push -u origin master
+
+docker build -t draw .
+docker run -d -p 8888:8080 draw
+http://localhost:8888/draw/?local=1
 
 React {{{0
 
