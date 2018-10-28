@@ -1,6 +1,6 @@
 !git pull
+!git commit -m "atlas-viewer.min.js 2032"
 !git add .
-!git commit -m "app.min.js not affect UI paper size"
 !git push -u origin master
 
 docker build -t draw .
