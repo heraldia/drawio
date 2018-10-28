@@ -1,3 +1,7 @@
+!git add .
+!git commit -m "paperSize7inch"
+!git push -u origin master
+
 React {{{0
 
 https://ant.design/
@@ -240,4 +244,5 @@ https://jgraph.github.io/mxgraph/
 2. mxgraph.jar
 3. barcode / type option
 4. xml to json
+
 

@@ -2310,4 +2310,4 @@ a.setAttribute("pageHeight",this.graph.pageFormat.height);
 null!=this.graph.background&&a.setAttribute("background",this.graph.background);
 return a};
 
-
+alter atlas.min.js not affect ui
