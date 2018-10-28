@@ -1424,7 +1424,7 @@
 	    ];
 		
 		mxCellRenderer.defaultShapes['label'].prototype.customProperties = [
-			{name: 'fieldType', dispName: 'Field Type', type: 'enum'
+			{name: 'fieldType', dispName: 'Field Type', type: 'enum',
 				enumList: [{val: 'itemName', dispName: 'Item Name'}, 
 						   {val: 'barcode', dispName: 'Barcode'}, 
 						   {val: 'price', dispName: 'Price'}, 
