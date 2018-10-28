@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "app.min.js default letter size"
+!git commit -m "app.min.js 11665 default letter size"
 !git add .
 !git push -u origin master
 
@@ -7,6 +7,9 @@ docker kill $(docker ps -a -q)
 docker build -t draw .
 docker run -d -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
+
+!python searchAwordInAFolder.py createVertexTemplateEntry    
+!dot -Tpng relation.dot -o relation.png
 
 React {{{0
 
@@ -229,17 +232,16 @@ draggable html => css
 minxian{{{2
 ui-ace
 
-!python searchAwordInAFolder.py letter
-dot -Tpng relation.dot -o relation.png
 s: search 
 shape = box
 shape = diamond
 shape = ellipse
 
-%s/</\r</gc
-%s/;/;\r/gc
-%s/},/},\r/gc
-%s/{/\r{/gc
+s/</\r</gc
+s/;/;\r/gc
+s/},/},\r/gc
+s/,/,\r/gc
+s/{/\r{/gc
 2222, 2246 s/}/}\r/gc
 2222, 2246 s/)/)\r/gc
 < : &lt ; >:&gt ;  ": &quot

@@ -2310,8 +2310,57 @@ a.setAttribute("pageHeight",this.graph.pageFormat.height);
 null!=this.graph.background&&a.setAttribute("background",this.graph.background);
 return a};
 
+atlas.min.js == app.min.js
 alter atlas.min.js not affect ui
 app.min.js not affect UI paper size
 [2018-10-27 20:58:16] Editor.js affects UI paper size, add customized ESL size
-app.min.js default letter size
+[doing ] app.min.js default letter size 
+app.min.js 130 mxResources
+
+app.min.js 11665
+this.createVertexTemplateEntry("shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.letter;",
+46.4,
+34.8,
+"",
+"Letter",
+null,
+null,
+this.getTagsForStencil("mxgraph.veeam.misc",
+"letter",
+"veeam vmware virtual machine misc miscellaneous").join(" "))
+
+app.min.js 2530
+Sidebar.prototype.createVertexTemplateEntry=function(a,c,d,b,f,e,h,g){g=null!=g&&0<g.length?g:f.toLowerCase();
+return this.addEntry(g,mxUtils.bind(this,function(){return this.createVertexTemplate(a,c,d,b,f,e,h)}))};
+
+app.min.js 2532
+Sidebar.prototype.createVertexTemplate=function(a,c,d,b,f,e,h,g){a=[new mxCell(null!=b?b:"",new mxGeometry(0,0,c,d),a)];a[0].vertex=!0;
+return this.createVertexTemplateFromCells(a,c,d,f,e,h,g)};
+
+app.min.js 2537
+Sidebar.prototype.createVertexTemplateFromCells=function(a,c,d,b,f,e,h){return this.createItem(a,b,f,e,c,d,h)};
+
+app.min.js 2472
+Sidebar.prototype.createItem=function(a,c,d,b,f,e,h){
+var g=document.createElement("a");
+g.setAttribute("href","javascript:void(0); ");
+g.className="geItem";
+g.style.overflow="hidden";
+var k=mxClient.IS_QUIRKS?8+2*this.thumbPadding:2*this.thumbBorder;
+g.style.width=this.thumbWidth+k+"px";
+g.style.height=this.thumbHeight+k+"px";
+g.style.padding=this.thumbPadding+"px";
+mxClient.IS_IE6&&(g.style.border="none");
+mxEvent.addListener(g,"click",function(a){mxEvent.consume(a)});
+this.createThumb(a,this.thumbWidth,this.thumbHeight, g,c,d,b,f,e);
+var l=new mxRectangle(0,0,f,e);
+1<a.length||a[0].vertex?(b=this.createDragSource(g,this.createDropHandler(a,!0,h,l),this.createDragPreview(f,e),a,l),this.addClickHandler(g,b,a),b.isGuidesEnabled=mxUtils.bind(this,function(){return this.editorUi.editor.graph.graphHandler.guidesEnabled})):null!=a[0]&&a[0].edge&&(b=this.createDragSource(g,this.createDropHandler(a,!1,h,l),
+this.createDragPreview(f,e),a,l),this.addClickHandler(g,b,a));
+mxClient.IS_IOS||mxEvent.addGestureListeners(g,null,mxUtils.bind(this, function(b){mxEvent.isMouseEvent(b)&&this.showTooltip(g,a,l.width,l.height,c,d)}));
+return g};
+
+
+
+todo
 default compressed xml
+
