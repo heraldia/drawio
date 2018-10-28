@@ -1,8 +1,9 @@
 !git pull
-!git commit -m "Editor.js:1729"
+!git commit -m "app.min.js default letter size"
 !git add .
 !git push -u origin master
 
+docker kill $(docker ps -a -q)
 docker build -t draw .
 docker run -d -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
@@ -228,7 +229,7 @@ draggable html => css
 minxian{{{2
 ui-ace
 
-python searchAwordInAFolder.py 594 mm
+!python searchAwordInAFolder.py letter
 dot -Tpng relation.dot -o relation.png
 s: search 
 shape = box

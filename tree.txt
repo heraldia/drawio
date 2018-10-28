@@ -2312,3 +2312,6 @@ return a};
 
 alter atlas.min.js not affect ui
 app.min.js not affect UI paper size
+[2018-10-27 20:58:16] Editor.js affects UI paper size, add customized ESL size
+app.min.js default letter size
+default compressed xml

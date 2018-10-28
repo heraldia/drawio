@@ -14,4 +14,5 @@ digraph first2{
 "DiagramFormatPanel" -> "addPaperSize" [label= "5412" ];
 "atlas.min.js"  -> "docProps/custom.xml" [label = "8809" ];
 "extensions.min.js" -> "docProps/custom.xml" [label = "485"]; 
+"Editor.js" -> "to add esl size";
 }

@@ -1726,14 +1726,11 @@ PageSetupDialog.addPageFormatPanel = function(div, namePostfix, pageFormat, page
 PageSetupDialog.getFormats = function()
 {
 	return [
-            {key:"7inch",title:'ESL 7 inch (5" x 7")',format:new mxRectangle(0,0,500,700)},
+            {key: '6inch', title:'ESL 6 inch (6" x 4")',format:new mxRectangle(0,0,600,400)},
+            {key: '7inch', title:'ESL 7 inch (7" x 5")',format:new mxRectangle(0,0,700,500)},
             {key: 'letter', title: 'US-Letter (8,5" x 11")', format: mxConstants.PAGE_FORMAT_LETTER_PORTRAIT},
 	        {key: 'legal', title: 'US-Legal (8,5" x 14")', format: new mxRectangle(0, 0, 850, 1400)},
 	        {key: 'tabloid', title: 'US-Tabloid (279 mm x 432 mm)', format: new mxRectangle(0, 0, 1100, 1700)},
-	        {key: 'a0', title: 'A0 (841 mm x 1189 mm)', format: new mxRectangle(0, 0, 3300, 4681)},
-	        {key: 'a1', title: 'A1 (594 mm x 841 mm)', format: new mxRectangle(0, 0, 2339, 3300)},
-	        {key: 'a2', title: 'A2 (420 mm x 594 mm)', format: new mxRectangle(0, 0, 1654, 2336)},
-	        {key: 'a3', title: 'A3 (297 mm x 420 mm)', format: new mxRectangle(0, 0, 1169, 1654)},
 	        {key: 'a4', title: 'A4 (210 mm x 297 mm)', format: mxConstants.PAGE_FORMAT_A4_PORTRAIT},
 	        {key: 'a5', title: 'A5 (148 mm x 210 mm)', format: new mxRectangle(0, 0, 583, 827)},
 	        {key: 'a6', title: 'A6 (105 mm x 148 mm)', format: new mxRectangle(0, 0, 413, 583)},

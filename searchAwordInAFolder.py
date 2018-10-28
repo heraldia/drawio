@@ -4,7 +4,8 @@ import sys
 def searchAWord(filename, old_str):
     file_data = open("{}.codereview".format(old_str), 'a+')
     WROTEFILENAME = False
-    with open(filename, "r", encoding='gb18030', errors='ignore') as f:
+#with open(filename, "r", encoding='gb18030', errors='ignore') as f:
+    with open(filename, "r") as f:
         lineCounter = 0
         for line in f:
             lineCounter += 1
