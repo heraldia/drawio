@@ -219,11 +219,25 @@ draggable html => css
 minxian{{{2
 ui-ace
 
+python searchAwordInAFolder.py 594 mm
+dot -Tpng relation.dot -o relation.png
+s: search 
+shape = box
+shape = diamond
+shape = ellipse
+
 %s/</\r</gc
 %s/;/;\r/gc
+%s/},/},\r/gc
 %s/{/\r{/gc
 2222, 2246 s/}/}\r/gc
 2222, 2246 s/)/)\r/gc
 < : &lt ; >:&gt ;  ": &quot
 
 https://jgraph.github.io/mxgraph/
+
+1. a limited list of component
+2. mxgraph.jar
+3. barcode / type option
+4. xml to json
+

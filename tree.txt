@@ -2286,8 +2286,28 @@ EditoUi.js 1087 EditorUi.prototype.exportImage = function(scale, transparentBack
             c?null:!g.checked)}
 
 saveData -> 3505
-1. a limited list of component
-2. mxgraph.jar
-3. barcode / type option
-4. xml to json
+
+atlas == Atlassian is a vendor of gliffy
+
+# atlas.min.js:1986 // generate XML header
+Editor.prototype.getGraphXml=function(a){
+a=(null!=a?a:1)? (new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()):
+                 this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
+
+if(0!=this.graph.view.translate.x||0!=this.graph.view.translate.y)
+a.setAttribute("dx",Math.round(100*this.graph.view.translate.x)/100), a.setAttribute("dy",Math.round(100*this.graph.view.translate.y)/100);
+a.setAttribute("grid",this.graph.isGridEnabled()?"1":"0");
+a.setAttribute("gridSize", this.graph.gridSize);
+a.setAttribute("guides",this.graph.graphHandler.guidesEnabled?"1":"0");
+a.setAttribute("tooltips",this.graph.tooltipHandler.isEnabled()?"1":"0");
+a.setAttribute("connect",this.graph.connectionHandler.isEnabled()?"1":"0");
+a.setAttribute("arrows",this.graph.connectionArrowsEnabled?"1":"0");
+a.setAttribute("fold",this.graph.foldingEnabled?"1":"0");
+a.setAttribute("page",this.graph.pageVisible?"1":"0");
+a.setAttribute("pageScale",this.graph.pageScale);
+a.setAttribute("pageWidth",this.graph.pageFormat.width);
+a.setAttribute("pageHeight",this.graph.pageFormat.height);
+null!=this.graph.background&&a.setAttribute("background",this.graph.background);
+return a};
+
 
