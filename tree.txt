@@ -1,8 +1,7 @@
 !git pull
-!git commit -m "donw type option: Editor.js 1425"
+!git commit -m "todo compressed default"
 !git add .
 !git push -u origin master
-
 
 docker kill $(docker ps -a -q)
 docker build -t draw .
@@ -10,15 +9,15 @@ docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
 
-!python searchAwordInAFolder.py Editable
+!python searchAwordInAFolder.py Compressed
 !dot -Tpng relation.dot -o relation.png
 
-s: search 
 shape = box
 shape = diamond
 shape = ellipse
 
 s/</\r</gc
+5 s/\\n/\\n\r/gc
 s/;/;\r/gc
 s/},/},\r/gc
 s/,/,\r/gc
@@ -29,14 +28,14 @@ s/{/\r{/gc
 
 https://jgraph.github.io/mxgraph/
 
-requirement {{{2
+requirement {{{2 todo
 1. a limited list of component [what kinds?]
 1. what size of esl?
 2. mxgraph.jar
 4. xml to json
-todo
-default compressed xml
-
+3. default compressed xml
+5. app.min.js default letter size 
+other repos has json export?
 
 \etc
 \etc\build
@@ -2354,7 +2353,6 @@ atlas.min.js == app.min.js
 alter atlas.min.js not affect ui
 app.min.js not affect UI paper size
 [2018-10-27 20:58:16] Editor.js affects UI paper size, add customized ESL size
-[todo] app.min.js default letter size 
 app.min.js 130 mxResources
 
 app.min.js 11665

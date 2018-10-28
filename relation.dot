@@ -1,8 +1,10 @@
-digraph first2{
+digraph drawIo{
+//s: search 
 "diagramly/EditorUi.js:1086:getGraphXml" -> "app.min.js";
 "diagramly/EditorUi.js:1086:getGraphXml" -> "atlas.min.js" -> ":1986";
 "app.min.js" -> ":11644 letter" -> "getTagsForStencil";
-":11665 letter" -> "createVertexTemplateEntry";
+"app.min.js" ->":11665 letter" -> "createVertexTemplateEntry";
+"s:downloadFile" -> "app.min.js" -> "EditorUi.js";
 "app.min.js" -> ":2515" -> "createVertexTemplateEntry" -> "2517:" -> "createVertexTemplateEntry" -> "2521: createVertexTemplateFromCells" -> "2472: createItem";
 //"app.min.js" -> ":2031" -> "A1 (594 mm x 841 mm)";
 //"atlas.min.js" -> ":2032" -> "A1 (594 mm x 841 mm)";
@@ -12,7 +14,7 @@ digraph first2{
 "app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" [label
     = "==", arrowhead="none" ];
 
-"s: Paper Size" -> "app.min.js" -> "2856" -> "addPaperSize";
+"s:Paper Size" -> "app.min.js" -> "2856" -> "addPaperSize";
 "addPaperSize" -> "Format.js" -> "5029" -> "DiagramFormatPanel";
 "DiagramFormatPanel" -> "addPaperSize" [label= "5412" ];
 "atlas.min.js"  -> "docProps/custom.xml" [label = "8809" ];
