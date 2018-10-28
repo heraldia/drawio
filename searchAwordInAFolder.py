@@ -17,6 +17,7 @@ def searchAWord(filename, old_str):
                         file_data.write("#e "+filename+'\n')
                         WROTEFILENAME = True
                     file_data.write(str(lineCounter) + ": " + line)
+        file_data.write('\n')
         file_data.close()
 
     elif(sysstr[0] == "D"): # macbook
@@ -29,6 +30,7 @@ def searchAWord(filename, old_str):
                         file_data.write("#e "+filename+'\n')
                         WROTEFILENAME = True
                     file_data.write(str(lineCounter) + ": " + line)
+        file_data.write('\n')
         file_data.close()
 
 def traverseFolder(search_folder,searchStr):

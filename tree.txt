@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "type option"
+!git commit -m "type option: Editor.js 1425"
 !git add .
 !git push -u origin master
 
@@ -8,7 +8,7 @@ docker build -t draw .
 docker run -d -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
 
-!python searchAwordInAFolder.py Align
+!python searchAwordInAFolder.py Editable
 !dot -Tpng relation.dot -o relation.png
 
 s: search 
@@ -33,6 +33,8 @@ requirement {{{2
 2. mxgraph.jar
 3. barcode / type option
 4. xml to json
+todo
+default compressed xml
 
 
 \etc
@@ -2396,8 +2398,4 @@ this.createDragPreview(f,e),a,l),this.addClickHandler(g,b,a));
 mxClient.IS_IOS||mxEvent.addGestureListeners(g,null,mxUtils.bind(this, function(b){mxEvent.isMouseEvent(b)&&this.showTooltip(g,a,l.width,l.height,c,d)}));
 return g};
 
-
-
-todo
-default compressed xml
-
+[2018-10-28 00:25:14] Editor.js:1427
