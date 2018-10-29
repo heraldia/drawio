@@ -1,9 +1,12 @@
 !git pull
-!git commit -m "add label types"
+!git commit -m "add label types error"
 !git add .
 !git push -u origin master
 
 docker kill $(docker ps -a -q)
+docker stop $(docker ps -a -q)
+docker rmi $(docker images -q)
+docker rm $(docker ps -a -q)
 docker build -t draw .
 docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
