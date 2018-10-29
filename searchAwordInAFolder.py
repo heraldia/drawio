@@ -16,7 +16,7 @@ def searchAWord(filename, old_str, sysstr):
                         file_data.write("e "+filename+'\n')
                         WROTEFILENAME = True
                     file_data.write("\t"+str(lineCounter) + ": " + line)
-            #if WROTEFILENAME: file_data.write('\n')
+            if WROTEFILENAME: file_data.write('\n')
 
     elif(sysstr[0] == "D"): # macbook
         with open(filename, "r") as f:
@@ -28,7 +28,7 @@ def searchAWord(filename, old_str, sysstr):
                         file_data.write("e "+filename+'\n')
                         WROTEFILENAME = True
                     file_data.write("\t"+str(lineCounter) + ": " + line)
-            #if WROTEFILENAME: file_data.write('\n')
+            if WROTEFILENAME: file_data.write('\n')
 
     file_data.close()
 

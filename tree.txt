@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "todo compressed default"
+!git commit -m "add label types"
 !git add .
 !git push -u origin master
 
@@ -9,7 +9,7 @@ docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
 
-!python searchAwordInAFolder.py Compressed
+!python searchAwordInAFolder.py Logo
 !dot -Tpng relation.dot -o relation.png
 
 shape = box
@@ -24,7 +24,7 @@ s/,/,\r/gc
 s/{/\r{/gc
 2222, 2246 s/}/}\r/gc
 2222, 2246 s/)/)\r/gc
-< : &lt ; >:&gt ;  ": &quot
+ < : &lt ; >:&gt ;  ": &quot
 
 https://jgraph.github.io/mxgraph/
 
@@ -33,10 +33,12 @@ requirement {{{2 todo
 1. what size of esl?
 2. mxgraph.jar
 4. xml to json
+
 3. default compressed xml
 5. app.min.js default letter size 
-other repos has json export?
+other repos has json export? no
 
+https://groups.google.com/forum/#!forum/drawio
 \etc
 \etc\build
       build.properties
@@ -2328,27 +2330,6 @@ saveData -> 3505
 
 atlas == Atlassian is a vendor of gliffy
 
-# atlas.min.js:1986 // generate XML header
-Editor.prototype.getGraphXml=function(a){
-a=(null!=a?a:1)? (new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()):
-                 this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
-
-if(0!=this.graph.view.translate.x||0!=this.graph.view.translate.y)
-a.setAttribute("dx",Math.round(100*this.graph.view.translate.x)/100), a.setAttribute("dy",Math.round(100*this.graph.view.translate.y)/100);
-a.setAttribute("grid",this.graph.isGridEnabled()?"1":"0");
-a.setAttribute("gridSize", this.graph.gridSize);
-a.setAttribute("guides",this.graph.graphHandler.guidesEnabled?"1":"0");
-a.setAttribute("tooltips",this.graph.tooltipHandler.isEnabled()?"1":"0");
-a.setAttribute("connect",this.graph.connectionHandler.isEnabled()?"1":"0");
-a.setAttribute("arrows",this.graph.connectionArrowsEnabled?"1":"0");
-a.setAttribute("fold",this.graph.foldingEnabled?"1":"0");
-a.setAttribute("page",this.graph.pageVisible?"1":"0");
-a.setAttribute("pageScale",this.graph.pageScale);
-a.setAttribute("pageWidth",this.graph.pageFormat.width);
-a.setAttribute("pageHeight",this.graph.pageFormat.height);
-null!=this.graph.background&&a.setAttribute("background",this.graph.background);
-return a};
-
 atlas.min.js == app.min.js
 alter atlas.min.js not affect ui
 app.min.js not affect UI paper size
@@ -2397,4 +2378,8 @@ this.createDragPreview(f,e),a,l),this.addClickHandler(g,b,a));
 mxClient.IS_IOS||mxEvent.addGestureListeners(g,null,mxUtils.bind(this, function(b){mxEvent.isMouseEvent(b)&&this.showTooltip(g,a,l.width,l.height,c,d)}));
 return g};
 
-[2018-10-28 00:25:14] Editor.js:1427 3. barcode / type option and write into xml done
+[2018-10-28 00:25:14] diagramly\Editor.js:1427 3. barcode / type option and write into xml done
+[2018-10-29 14:01:32] doing looking for how to generate a xml [failed]
+
+[2018-10-29 15:17:58] read hanshow's document, and sort component types in Hanshow's example
+price tag https://www.google.com/search?biw=1745&bih=797&tbm=isch&sa=1&ei=wGzXW_r0G4u8tgWF6bf4CQ&q=sams+price+tag&oq=sams+price+tag&gs_l=img.3..0i7i30.3699.5406..5612...2.0..0.73.252.4......1....1..gws-wiz-img.......0i8i7i30.BgeVHX5fGiY#imgdii=xm3JVI13gjEBfM:&imgrc=Rx1-gd146tIPNM:

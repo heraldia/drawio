@@ -1,15 +1,15 @@
 digraph drawIo{
 //s: search 
-"diagramly/EditorUi.js:1086:getGraphXml" -> "app.min.js";
-"diagramly/EditorUi.js:1086:getGraphXml" -> "atlas.min.js" -> ":1986";
-"app.min.js" -> ":11644 letter" -> "getTagsForStencil";
-"app.min.js" ->":11665 letter" -> "createVertexTemplateEntry";
+"diagramly/EditorUi.js"->":1086:getGraphXml" -> "app.min.js";
+"diagramly/EditorUi.js"->":1086:getGraphXml" -> "atlas.min.js" -> ":1986";
+"app.min.js" -> ":11644"-> "s:letter" -> "getTagsForStencil";
+"app.min.js" ->":11665"-> "s:letter" -> "createVertexTemplateEntry";
 "s:downloadFile" -> "app.min.js" -> "EditorUi.js";
-"app.min.js" -> ":2515" -> "createVertexTemplateEntry" -> "2517:" -> "createVertexTemplateEntry" -> "2521: createVertexTemplateFromCells" -> "2472: createItem";
+"app.min.js" -> ":2515" -> "createVertexTemplateEntry" -> "2517:" -> "createVertexTemplate" -> "2521: createVertexTemplateFromCells" -> "2472: createItem";
 //"app.min.js" -> ":2031" -> "A1 (594 mm x 841 mm)";
 //"atlas.min.js" -> ":2032" -> "A1 (594 mm x 841 mm)";
-"diagramly/EditorUi.js:1086:getGraphXml" -> "atlas-view.min.js";
-"diagramly/EditorUi.js:1086:getGraphXml" -> "viewer.min.js";
+"diagramly/EditorUi.js"->":1086:getGraphXml" -> "atlas-view.min.js";
+"diagramly/EditorUi.js"->":1086:getGraphXml" -> "viewer.min.js";
 
 "app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" [label
     = "==", arrowhead="none" ];
@@ -21,6 +21,9 @@ digraph drawIo{
 "extensions.min.js" -> "docProps/custom.xml" [label = "485"]; 
 "Editor.js" -> "to add esl size";
 
+"app.min.js" -> ":3348" ->"getGraphXml"; 
+"app.min.js" -> ":1991" ->"generate XML header"; 
+"app.min.js" -> "s:getPrettyXml"
 
 
 
