@@ -23,8 +23,9 @@ digraph drawIo{
 
 "app.min.js" -> ":3348" ->"getGraphXml"; 
 "app.min.js" -> ":1991" ->"generate XML header"; 
-"app.min.js" -> "s:getPrettyXml"
+"app.min.js" -> "s:getPrettyXml";
 
+"s:exportXml" -> ":13855" -> "app.min.js";
 
 
 }

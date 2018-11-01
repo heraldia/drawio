@@ -1426,7 +1426,7 @@
 		mxCellRenderer.defaultShapes['label'].prototype.customProperties = [
 			{name: 'fieldType', dispName: 'Field Type', type: 'enum',
 				enumList: [
-                            {val: 'isSign', dispName: 'IS Sign'},
+                            {val: 'isSign', dispName: 'Is Sign'},
                             {val: 'upc', dispName: 'UPC'},
                             {val: 'offerDate', dispName: 'Offer Date'},
                             {val: 'limit', dispName: 'Limit'},
@@ -1444,6 +1444,7 @@
                             {val: 'currentPrice', dispName: 'Current Price'},
                             {val: 'currentPriceDescription', dispName: 'Current Price Description'},
                             {val: 'unitPrice', dispName: 'Unit Price'},
+                            {val: 'barcode', dispName: 'Barcode'},
 						    {val: 'logo', dispName: 'Logo'}], defVal: 'logo'},
 
 			{name: 'imageAspect', dispName: 'Fixed Image Aspect', type: 'bool', defVal:true},

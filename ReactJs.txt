@@ -1,0 +1,259 @@
+React {{{0
+
+https://ant.design/
+[MacBook搭建服务器环境 - 冰凉的枷锁的博客 - CSDN博客] 
+https://blog.csdn.net/qq_25639809/article/details/77988470 
+
+sudo apachectl start
+sudo apachectl restart
+http://127.0.0.1/
+
+npm start
+reactjs 页面分栏
+https://jsfiddle.net/boilerplate/jquery
+https://stackoverflow.com/questions/21784574/a-full-page-layout-with-resizable-panes-using-jquery-ui
+
+done {{{2 {
+https://reactjs.org/docs/react-component.html#setstate
+https://reactjs.org/tutorial/tutorial.html
+
+[React.js: web开发者的14个工具和资源 - java、c++、机器学习方向King - CSDN博客]
+https://blog.csdn.net/u011001084/article/details/54962383
+[开发reactjs使用什么ide_百度知道]
+https://zhidao.baidu.com/question/1736504807747494587.html
+[三：react的ide环境安装 - poishiki的博客 - CSDN博客]
+https://blog.csdn.net/poishiki/article/details/79968616
+[转 ： React Native 开发之 IDE 选型和配置 - 跬步者 - 博客园]
+https://www.cnblogs.com/jhj117/p/5611589.html
+[前端迷思与React.js - PetterLiu - 博客园]
+https://www.cnblogs.com/wintersun/p/6851750.html
+
+[windows环境reactjs入坑记------react开发环境安装 - VICHOU_FA的博客 - CSDN博客] good
+https://blog.csdn.net/vichou_fa/article/details/54172928
+
+npm install react react-dom babel-loader less-loader css-loader style-loader url-loader file-loader babel-preset-es2015 babel-preset-react react-hot-loader jquery eslint eslint-plugin-react --save-dev
+
+npm install babel-preset-stage-0 --save-dev
+[window下如何搭建react项目 - 发光的萤火虫 - CSDN博客]
+https://blog.csdn.net/snow_2016/article/details/77372647
+[快速创建一个react项目 - zerocher的博客 - CSDN博客] !!!
+https://blog.csdn.net/zerocher/article/details/80576406
+[如何创建react工程 - kerryqpw的博客 - CSDN博客] !!!
+https://blog.csdn.net/kerryqpw/article/details/68067466
+
+
+https://code.visualstudio.com/Docs/languages/javascript#_writing-jsconfigjson
+https://reactjs.org/tutorial/tutorial.html#before-we-start-the-tutorial 50% understand
+https://reactjs.org/docs/hello-world.html
+https://reactjs.org/docs/create-a-new-react-app.html
+https://react.docschina.org/docs/handling-events.html 
+
+[事件处理 - React] good
+https://react.docschina.org/docs/thinking-in-react.html
+State 只在需要交时使用
+让我们来看看每一条，找出哪一个是 state。每个数据只要考虑三个问题：
+
+它是通过 props 从父级传来的吗？如果是，他可能不是 state。
+它随着时间推移不变吗？如果是，它可能不是 state。
+你能够根据组件中任何其他的 state 或 props 把它计算出来吗？如果是，它不是 state。
+原产品列表被作为 props 传入，所以它不是 state。搜索文本和复选框似乎是 state，因为它们随时间改变并且不能由其他任何值计算出来。最后，产品的筛选列表不是 state，因为它可以通过将原始产品列表与搜索文本和复选框的值组合计算出来。
+
+[React State(状态) | 菜鸟教程] good
+http://www.runoob.com/react/react-state.html 
+https://www.cnblogs.com/yunfeifei/p/4486125.html
+
+[MacBook搭建服务器环境 - 冰凉的枷锁的博客 - CSDN博客] 
+https://blog.csdn.net/qq_25639809/article/details/77988470 
+}
+
+tools{{{2 {
+https://babeljs.io/repl/#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUAcjogQUcwEpeAJTjDgUACIB5ALLK6aRklTRBQ0KCohMQk6Bx4gA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=6.26.0&envVersion=
+
+}
+
+templateGenerator{{{1{
+????question{{{2
+who set the size of the canvas?
+template including text or text inject later?
+who bind the text to component?
+opensource mit bsd?
+7 fontsize = 12pt; .52 fontsize = 9pt
+
+my thoughts{{{1
+record current template setting
+drag => drop and copy
+template resize
+relative position
+generate script
+visio to script?
+
+google {{{2
+html painter lib    
+javascript painter lib
+
+atomic functionality libs{{{3 {
+http://fabricjs.com/events
+http://fabricjs.com/manage-selection !
+https://gojs.net/latest/samples/regrouping.html save json 
+http://sigmajs.org/ The following example shows how simple it is to use sigma to display a JSON encoded graph file.publish networks on Web pages, 
+[一款基于HTML5 Canvas的画板涂鸦动画 - 拎壶充 - 博客园] simple js
+https://www.cnblogs.com/liaohuolin/p/4210867.html
+新增了回撤和清空画板的操作, export into image
+}
+
+[HTML5 canvas自制画板]
+http://www.jq22.com/jquery-info11051
+
+ done{{{4
+http://interactjs.io/ only for atomic drag and drop resizing
+https://stackoverflow.com/questions/21784574/a-full-page-layout-with-resizable-panes-using-jquery-ui
+http://gridstackjs.com/
+[Is there a Javascript library for Paint-like applications using canvas? - Stack Overflow] a lot of libs.
+https://stackoverflow.com/questions/7134238/is-there-a-javascript-library-for-paint-like-applications-using-canvas
+ not very relevant{{{3{
+Paper.js vector graphics scripting
+https://p5js.org/
+https://github.com/soulwire/sketch.js
+https://github.com/kirillmurashov/vue-drag-resize
+https://tympanus.net/codrops/2014/10/30/resizing-cropping-images-canvas/
+
+interesting{{{4{
+http://www.bhivecanvas.com/demos/particles.php good colorful particles
+http://soulwire.github.io/sketch.js/ good colorful particles
+https://www.createjs.com/tweenjs
+https://two.js.org/examples/ 
+painterro-image-data    }
+
+Manoj gave me{{{2{
+drools
+https://www.inrule.com/inrule/
+https://www.drools.org/
+}
+
+canvas good libs{{{2 doing ==================================================================
+http://literallycanvas.com/ 
+React.js is a dependency.  json, cannot move
+
+https://github.com/ivictbor/painterro 
+can not resize, move a shape
+can save Base64 json, crop
+not components
+
+http://wpaint.websanova.com/
+5yrs ago. different shapes, can not resize or move, can erase, A jQuery paint plugin
+}
+
+xml template{{{2 {
+xml ui template design github
+
+#nothing
+开发 类似android studio ui设计模块 
+http://www.jimumirror.com/
+}
+
+latex {{{2 vector
+[LaTeXDraw - A vector drawing editor for LaTeX] good can move
+http://latexdraw.sourceforge.net/
+java -jar "c:\Program Files\latexdraw\LaTeXDraw.jar"
+
+lots of options:
+https://tex.stackexchange.com/questions/84890/online-latex-diagram-graphical-editor
+
+<conceal>
+[TikzEdt - A WYSIWYG Tikz editor. Quick Tour] hard to use
+http://www.tikzedt.org/quicktour.html
+tikzedt 
+</conceal>
+
+graphviz visualization {{{2
+but we do not need edges
+http://viz-js.com/
+
+我请教您一设计问题。
+我想做一款类似于 Android studio UI design那部分模块的web application。
+也就是用户可以修改xml或json, graphic UI就能更新视图。
+反之亦可。
+有什么好建议或好的js库推荐？
+谢谢
+
+Hi
+I want to design a web UI, which is similar to 
+Android studio UI design module.
+
+script for vector image{{{2
+https://code-maven.com/svg-with-javascript only draw, w/o position
+
+* Web Editor{{{2
+https://ace.c9.io/#nav=embedding
+
+report{{{2
+* xml android studio layout editor or xcode// too heavy 
+* draw.io {{{3
+best [jgraph/drawio: Source to www.draw.io] doing
+https://github.com/jgraph/drawio
+
+[jgraph/mxgraph: mxGraph is a fully client side JavaScript diagramming library]
+https://github.com/jgraph/mxgraph
+
+something else: {{{4
+https://github.com/fatiherikli/react-designer no export
+
+[The draw.io Open Source Project on Open Hub]
+https://www.openhub.net/p/draw_io
+[ikotler/pythonect at develop] python version
+https://github.com/ikotler/pythonect/tree/develop
+[:: STRUCTORIZER :: -] java
+https://structorizer.fisch.lu/index.php?include=screenshot
+
+* upload image then generate a vector image in the backend, python cv
+
+* dreamweaver Web Editor
+* latex
+* graphviz
+
+* canvas // no applicable 
+
+draggable html => css
+minxian{{{2
+ui-ace
+
+<conceal>irrelenvant
+[jointjs和mxgraph比较 - 转角遇到爱 - CSDN博客]
+https://blog.csdn.net/weixin_39169232/article/details/73850708
+
+</conceal>
+
+[Play around mxGraph (From&To JSON)]
+https://codepen.io/Gatcha/pen/oYexEB
+
+Monoj prefers synchronized programming using java not nodejs.
+1. develop by java
+2. container update
+3. execute this container
+4. old container is destroyed.
+loop to 1.
+
+[MAC启用本地http服务 - 简书] 2018-11-01 15:41:12    
+https://www.jianshu.com/p/28db6c04189b 
+- sudo apachectl start 启动
+- sudo apachectl restart " 重启
+- sudo apachectl stop " 停止
+
+[2018-11-01 15:43:23]
+[Mxgraph how to export JSON data files - Stack Overflow]
+https://stackoverflow.com/questions/43446226/mxgraph-how-to-export-json-data-files not done
+https://github.com/jgraph/mxgraph-js/blob/master/javascript/examples/jsondata.html
+function parseXmlJSON (model)
+        {
+            var encoder = new mxCodec();
+            var node = encoder.encode(graph.getModel());
+
+            var testString = mxUtils.getXml(node);   // fetch xml (string or document/node)
+            var result = xmlToJSON.parseString(testString);   // parses to JSON object
+            mxUtils.popup(JSON.stringify(result, null, 4), true); // turns into string
+        }
+
+[2018-11-01 16:20:16] app.min.js 13855 exportXml todo
+-> app.min.js: 13057 downloadFile 
+
+

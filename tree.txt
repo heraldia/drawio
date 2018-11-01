@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "add label types error"
+!git commit -m "add json export : app.min.js 13091"
 !git add .
 !git push -u origin master
 
@@ -12,7 +12,7 @@ docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
 
-!python searchAwordInAFolder.py Logo
+!python searchAwordInAFolder.py exportXml
 !dot -Tpng relation.dot -o relation.png
 
 shape = box
@@ -20,6 +20,8 @@ shape = diamond
 shape = ellipse
 
 s/</\r</gc
+:%s/></>\r</g 
+
 5 s/\\n/\\n\r/gc
 s/;/;\r/gc
 s/},/},\r/gc
@@ -51,6 +53,9 @@ requirement {{{2 todo
 1. what size of esl?
 2. mxgraph.jar
 4. xml to json
+
+get the component types from backend.
+create another container running drools.org
 
 3. default compressed xml
 5. app.min.js default letter size 
@@ -2401,3 +2406,6 @@ return g};
 
 [2018-10-29 15:17:58] read hanshow's document, and sort component types in Hanshow's example
 price tag https://www.google.com/search?biw=1745&bih=797&tbm=isch&sa=1&ei=wGzXW_r0G4u8tgWF6bf4CQ&q=sams+price+tag&oq=sams+price+tag&gs_l=img.3..0i7i30.3699.5406..5612...2.0..0.73.252.4......1....1..gws-wiz-img.......0i8i7i30.BgeVHX5fGiY#imgdii=xm3JVI13gjEBfM:&imgrc=Rx1-gd146tIPNM:
+[2018-10-30 16:10:02] add label types done, object types
+
+todo barcode => barcode type
