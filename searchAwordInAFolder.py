@@ -35,6 +35,8 @@ def searchAWord(filename, old_str, sysstr):
 def traverseFolder(search_folder,searchStr):
     sysstr = platform.system()
     for dirpath, dirnames, filenames in os.walk(search_folder): # using
+        if 'codereview' in dirpath:
+            continue
         for filename in filenames:
             if '.js' in filename or '.java' in filename:
                 searchAWord(os.path.join(dirpath,filename), searchStr, sysstr)

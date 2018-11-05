@@ -1,18 +1,18 @@
 !git pull
-!git commit -m "add json export : app.min.js 13091"
+!git commit -m "before deleting people"
 !git add .
 !git push -u origin master
 
 docker kill $(docker ps -a -q)
 docker stop $(docker ps -a -q)
 docker rmi $(docker images -q)
-docker rm $(docker ps -a -q)
+
 docker build -t draw .
 docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
 
-!python searchAwordInAFolder.py exportXml
+!python searchAwordInAFolder.py Engineering
 !dot -Tpng relation.dot -o relation.png
 
 shape = box
@@ -44,7 +44,7 @@ docker images
 3.删除images，通过image的id来指定删除谁
 docker rmi <image id>
 想要删除untagged images，也就是那些id为<None>的image的话可以用
-docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+docker rmi $(docker images | grep "^<none>" | awk "{print $3})
 要删除全部image的话
 docker rmi $(docker images -q)
 
@@ -52,7 +52,7 @@ requirement {{{2 todo
 1. a limited list of component [what kinds?]
 1. what size of esl?
 2. mxgraph.jar
-4. xml to json
+4. xml <=> json java
 
 get the component types from backend.
 create another container running drools.org
@@ -2407,5 +2407,15 @@ return g};
 [2018-10-29 15:17:58] read hanshow's document, and sort component types in Hanshow's example
 price tag https://www.google.com/search?biw=1745&bih=797&tbm=isch&sa=1&ei=wGzXW_r0G4u8tgWF6bf4CQ&q=sams+price+tag&oq=sams+price+tag&gs_l=img.3..0i7i30.3699.5406..5612...2.0..0.73.252.4......1....1..gws-wiz-img.......0i8i7i30.BgeVHX5fGiY#imgdii=xm3JVI13gjEBfM:&imgrc=Rx1-gd146tIPNM:
 [2018-10-30 16:10:02] add label types done, object types
+barcode => barcode type, the frame boxing is barcode type
+[2018-11-02 10:25:18] todo expanded xml
+app.min.js
+a = (null != a ? a : 1) ? (new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()) :
+this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
+[2018-11-02 15:14:51] Found docs
+https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html#mxGraph.getSelectionCells
+[Online JavaScript beautifier] 
+https://beautifier.io/ 
 
-todo barcode => barcode type
+[2018-11-05 10:40:12] Clean UI components
+-[2018-11-05 10:45:44] Clean create page, failed todo

@@ -1,9 +1,14 @@
 digraph drawIo{
 //s: search 
-"diagramly/EditorUi.js"->":1086:getGraphXml" -> "app.min.js";
+"diagramly/EditorUi.js"->":1086:getGraphXml" -> "app.min.js" -> 
+"viewer.min.js"->"1382"-> "mxGraph.prototype.getSelectionCells";
+
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "atlas.min.js" -> ":1986";
+"s:letter" [shape = box];
+
 "app.min.js" -> ":11644"-> "s:letter" -> "getTagsForStencil";
 "app.min.js" ->":11665"-> "s:letter" -> "createVertexTemplateEntry";
+"s:downloadFile" [shape = box];
 "s:downloadFile" -> "app.min.js" -> "EditorUi.js";
 "app.min.js" -> ":2515" -> "createVertexTemplateEntry" -> "2517:" -> "createVertexTemplate" -> "2521: createVertexTemplateFromCells" -> "2472: createItem";
 //"app.min.js" -> ":2031" -> "A1 (594 mm x 841 mm)";
@@ -11,9 +16,9 @@ digraph drawIo{
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "atlas-view.min.js";
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "viewer.min.js";
 
-"app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" [label
-    = "==", arrowhead="none" ];
+"app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" [label = "==", arrowhead="none" ];
 
+"s:Paper Size" [shape = box];
 "s:Paper Size" -> "app.min.js" -> "2856" -> "addPaperSize";
 "addPaperSize" -> "Format.js" -> "5029" -> "DiagramFormatPanel";
 "DiagramFormatPanel" -> "addPaperSize" [label= "5412" ];
@@ -24,8 +29,12 @@ digraph drawIo{
 "app.min.js" -> ":3348" ->"getGraphXml"; 
 "app.min.js" -> ":1991" ->"generate XML header"; 
 "app.min.js" -> "s:getPrettyXml";
+"s:getPrettyXml"[shape = box];
+"s:exportXml" [shape = box];
 
 "s:exportXml" -> ":13855" -> "app.min.js";
+"clean up create options" [shape = box];
+"clean up create options" -> "viewer.min.js" -> 3214;
 
 
 }
