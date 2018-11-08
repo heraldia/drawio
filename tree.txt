@@ -12,7 +12,7 @@ docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
 
-!python searchAwordInAFolder.py Engineering
+!python searchAwordInAFolder.py BPMN
 !dot -Tpng relation.dot -o relation.png
 
 shape = box
@@ -39,10 +39,15 @@ Docker 容器镜像删除
 docker stop $(docker ps -a -q)
 如果想要删除所有container的话再加一个指令：
 docker rm $(docker ps -a -q)
+
+: list all containers
+docker ps
+docker ps -a
 2.查看当前有些什么images
 docker images
 3.删除images，通过image的id来指定删除谁
 docker rmi <image id>
+docker rmi 5c56550eba6a 
 想要删除untagged images，也就是那些id为<None>的image的话可以用
 docker rmi $(docker images | grep "^<none>" | awk "{print $3})
 要删除全部image的话
@@ -2419,3 +2424,9 @@ https://beautifier.io/
 
 [2018-11-05 10:40:12] Clean UI components
 -[2018-11-05 10:45:44] Clean create page, failed todo
+
+[2018-11-05 15:36:25] Clean sidebar in mainpage
+-modifying 201811051543
+./src/main/webapp/js/diagramly/sidebar/Sidebar-BPMN.js
+./src/main/webapp/js/mxgraph/Sidebar.js 
+Sidebar.prototype.init = function() { 201811051606

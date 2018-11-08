@@ -34,7 +34,10 @@ digraph drawIo{
 
 "s:exportXml" -> ":13855" -> "app.min.js";
 "clean up create options" [shape = box];
-"clean up create options" -> "viewer.min.js" -> 3214;
+"clean up create options" -> "viewer.min.js" -> 3214 -> "todo";
+
+"clean up mainpage sidebar" [shape = box];
+"clean up mainpage sidebar" -> "app.min.js" -> "addPaletteFunctions";
 
 
 }

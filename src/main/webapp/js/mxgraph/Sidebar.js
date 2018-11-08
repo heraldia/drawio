@@ -87,6 +87,7 @@ Sidebar.prototype.init = function()
 	
 	this.addSearchPalette(true);
 	this.addGeneralPalette(true);
+    /*  201811051543    
 	this.addMiscPalette(false);
 	this.addAdvancedPalette(false);
 	this.addBasicPalette(dir);
@@ -104,6 +105,7 @@ Sidebar.prototype.init = function()
 		 'Worker1', 'Soldier1', 'Doctor1', 'Tech1', 'Security1', 'Telesales1'], null,
 		 {'Wireless_Router_N': 'wireless router switch wap wifi access point wlan',
 		  'Router_Icon': 'router switch'});
+         */
 };
 
 /**
