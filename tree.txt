@@ -1,11 +1,20 @@
 !git pull
-!git commit -m "add all .codereview"
+!git commit -m "revert viewer.min.js as a bug 2018-11-08_154205.png"    
 !git add .
 !git push -u origin master
+git log viewer.min.js
+git log ./src/main/webapp/js/atlas-viewer.min.js
+[git 如何让单个文件回退到指定的版本 - Dominic_Xu的博客 - CSDN博客]
+https://blog.csdn.net/x1066988452/article/details/53782287
+git reset 80f2df1ce674e2e42f983b8cac21dc75b4d00c76 ./src/main/webapp/js/atlas-viewer.min.js
+git checkout ./src/main/webapp/js/atlas-viewer.min.js
+git checkout ./src/main/webapp/js/viewer.min.js
 
 docker kill $(docker ps -a -q)
 docker stop $(docker ps -a -q)
 docker rmi $(docker images -q)
+
+docker rmi -f 2e1001d74f66    
 
 docker build -t draw .
 docker run -d -p 8888:8080 draw
@@ -47,6 +56,7 @@ docker ps -a
 docker images
 3.删除images，通过image的id来指定删除谁
 docker rmi <image id>
+docker rmi 755de3df3af9 
 docker rmi 5c56550eba6a 
 想要删除untagged images，也就是那些id为<None>的image的话可以用
 docker rmi $(docker images | grep "^<none>" | awk "{print $3})
@@ -2419,6 +2429,7 @@ a = (null != a ? a : 1) ? (new mxCodec(mxUtils.createXmlDocument())).encode(this
 this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
 [2018-11-02 15:14:51] Found docs
 https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html#mxGraph.getSelectionCells
+
 [Online JavaScript beautifier] 
 https://beautifier.io/ 
 
@@ -2430,3 +2441,7 @@ https://beautifier.io/
 ./src/main/webapp/js/diagramly/sidebar/Sidebar-BPMN.js
 ./src/main/webapp/js/mxgraph/Sidebar.js 
 Sidebar.prototype.init = function() { 201811051606
+
+[2018-11-08 16:08:15]
+git checkout ./src/main/webapp/js/atlas-viewer.min.js
+git checkout ./src/main/webapp/js/viewer.min.js
