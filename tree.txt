@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "before deleting people"
+!git commit -m "add all .codereview"
 !git add .
 !git push -u origin master
 

@@ -1,0 +1,240 @@
+e .\etc\mxgraph\mxClient.js
+	42: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	43: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+
+e .\src\main\webapp\js\app.min.js
+	153: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	154: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+	3364: "right";
+var d=document.createElement("textarea");
+d.setAttribute("wrap","off");
+d.setAttribute("spellcheck","false");
+d.setAttribute("autocorrect","off");
+d.setAttribute("autocomplete","off");
+d.setAttribute("autocapitalize","off");
+d.style.overflow="auto";
+d.style.resize="none";
+d.style.width="600px";
+d.style.height="360px";
+d.style.marginBottom="16px";
+d.value=mxUtils.getPrettyXml(a.editor.getGraphXml());
+c.appendChild(d);
+this.init=function(){d.focus()};
+Graph.fileSupport&&(d.addEventListener("dragover",function(a){a.stopPropagation();
+
+	12881: var k=a.editor.graph.cloneCells([b])[0];
+h.addCells([k]);
+d=h.view.getState(k);
+var u="";
+null!=d.shape&&null!=d.shape.stencil&&(u=mxUtils.getPrettyXml(d.shape.stencil.desc));
+mxUtils.write(f,u||"");
+d=h.getGraphBounds();
+e=Math.min(160/d.width,(e-40)/d.height);
+h.view.scaleAndTranslate(e,20/e-d.x,20/e-d.y);
+g.appendChild(l);
+n.appendChild(g);
+g=document.createElement("tr");
+l=document.createElement("td");
+l.setAttribute("colspan","2");
+l.style.paddingTop="2px";
+l.style.whiteSpace="nowrap";
+l.setAttribute("align",
+	12882: "right");
+e=mxUtils.button(mxResources.get("cancel"),function(){a.hideDialog()});
+e.className="geBtn";
+a.editor.cancelFirst&&l.appendChild(e);
+a.isOffline()||(d=mxUtils.button(mxResources.get("help"),function(){a.openLink("https://desk.draw.io/support/solutions/articles/16000052874")}),d.className="geBtn",l.appendChild(d));
+var t=function(b,c,d){var h=f.value,k=mxUtils.parseXml(h),h=mxUtils.getPrettyXml(k.documentElement),k=k.documentElement.getElementsByTagName("parsererror");
+if(null!=k&&0<k.length)a.showError(mxResources.get("error"),
+
+e .\src\main\webapp\js\atlas-viewer.min.js
+	150: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	151: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+
+e .\src\main\webapp\js\atlas.min.js
+	149: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	150: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+	3182: "right";
+var d=document.createElement("textarea");
+d.setAttribute("wrap","off");
+d.setAttribute("spellcheck","false");
+d.setAttribute("autocorrect","off");
+d.setAttribute("autocomplete","off");
+d.setAttribute("autocapitalize","off");
+d.style.overflow="auto";
+d.style.resize="none";
+d.style.width="600px";
+d.style.height="360px";
+d.style.marginBottom="16px";
+d.value=mxUtils.getPrettyXml(a.editor.getGraphXml());
+c.appendChild(d);
+this.init=function(){d.focus()};
+Graph.fileSupport&&(d.addEventListener("dragover",function(a){a.stopPropagation();
+
+	7443: var h=b.editor.graph.cloneCells([e])[0];
+f.addCells([h]);
+d=f.view.getState(h);
+var t="";
+null!=d.shape&&null!=d.shape.stencil&&(t=mxUtils.getPrettyXml(d.shape.stencil.desc));
+mxUtils.write(a,t||"");
+d=f.getGraphBounds();
+g=Math.min(160/d.width,(g-40)/d.height);
+f.view.scaleAndTranslate(g,20/g-d.x,20/g-d.y);
+k.appendChild(l);
+p.appendChild(k);
+k=document.createElement("tr");
+l=document.createElement("td");
+l.setAttribute("colspan","2");
+l.style.paddingTop="2px";
+l.style.whiteSpace="nowrap";
+l.setAttribute("align",
+	7444: "right");
+g=mxUtils.button(mxResources.get("cancel"),function(){b.hideDialog()});
+g.className="geBtn";
+b.editor.cancelFirst&&l.appendChild(g);
+b.isOffline()||(d=mxUtils.button(mxResources.get("help"),function(){b.openLink("https://desk.draw.io/support/solutions/articles/16000052874")}),d.className="geBtn",l.appendChild(d));
+var q=function(c,f,h){var d=a.value,m=mxUtils.parseXml(d),d=mxUtils.getPrettyXml(m.documentElement),m=m.documentElement.getElementsByTagName("parsererror");
+if(null!=m&&0<m.length)b.showError(mxResources.get("error"),
+
+e .\src\main\webapp\js\embed-static.min.js
+	225: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	226: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+
+e .\src\main\webapp\js\reader.min.js
+	225: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	226: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+
+e .\src\main\webapp\js\viewer.min.js
+	150: !1;
+b.validateOnParse=!1;
+b.resolveExternals=!1;
+b.loadXML(a);
+return b}}(),clearSelection:function(){return document.selection?function(){document.selection.empty()}:window.getSelection?function(){window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges()}:function(){}}(),getPrettyXml:function(a,b,c){var d=[];
+if(null!=a)if(b=b||"  ",c=c||"",a.nodeType==mxConstants.NODETYPE_TEXT)a=mxUtils.trim(mxUtils.getTextContent(a)),0<a.length&&
+	151: d.push(c+mxUtils.htmlEntities(a)+"\n");
+else{d.push(c+"<"+a.nodeName);
+var e=a.attributes;
+if(null!=e)for(var f=0;
+f<e.length;
+f++){var g=mxUtils.htmlEntities(e[f].value);
+d.push(" "+e[f].nodeName+'="'+g+'"')}e=a.firstChild;
+if(null!=e){for(d.push(">\n");
+null!=e;
+)d.push(mxUtils.getPrettyXml(e,b,c+b)),e=e.nextSibling;
+d.push(c+"</"+a.nodeName+">\n")}else d.push("/>\n")}return d.join("")},removeWhitespace:function(a,b){for(var c=b?a.previousSibling:a.nextSibling;
+null!=c&&c.nodeType==mxConstants.NODETYPE_TEXT;
+){var d=
+
+e .\src\main\webapp\js\diagramly\Dialogs.js
+	8348: 		stencil = mxUtils.getPrettyXml(state.shape.stencil.desc);
+
+	8393: 		// Checks if XML has changed (getPrettyXml "normalizes" DOM)
+	8395: 		newValue = mxUtils.getPrettyXml(doc.documentElement);
+
+
+e .\src\main\webapp\js\mxgraph\Dialogs.js
+	681: 	textarea.value = mxUtils.getPrettyXml(editorUi.editor.getGraphXml());
+
+

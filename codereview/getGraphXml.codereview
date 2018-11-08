@@ -1,0 +1,455 @@
+e .\src\main\java\com\mxgraph\io\gliffy\importer\GliffyDiagramConverter.java
+	57:  * String drawioXml = converter.getGraphXml();
+</i>
+	571: 	public String getGraphXml()
+
+e .\src\main\java\com\mxgraph\online\OpenServlet.java
+	163: 					xml = converter.getGraphXml();
+
+
+e .\src\main\webapp\js\app.min.js
+	1991: Editor.prototype.getGraphXml=function(a){ // generate XML header
+	2154: EditorUi.prototype.getEditBlankXml=function(){return mxUtils.getXml(this.editor.getGraphXml())};
+EditorUi.prototype.getUrl=function(a){a=null!=a?a:window.location.pathname;
+var c=0<a.indexOf("?")?1:0,d;
+for(d in urlParams)a=0==c?a+"?":a+"&",a+=d+"="+urlParams[d],c++;
+return a};
+
+	2200: EditorUi.prototype.save=function(a){if(null!=a){this.editor.graph.isEditing()&&this.editor.graph.stopEditing();
+var c=mxUtils.getXml(this.editor.getGraphXml());
+try{if(Editor.useLocalStorage){if(null!=localStorage.getItem(a)&&!mxUtils.confirm(mxResources.get("replaceIt",[a])))return;
+localStorage.setItem(a,c);
+this.editor.setStatus(mxUtils.htmlEntities(mxResources.get("saved"))+" "+new Date)}else if(c.length<MAX_REQUEST_SIZE)(new mxXmlRequest(SAVE_URL,"filename="+encodeURIComponent(a)+"&xml="+encodeURIComponent(c))).simulate(document,
+	3364: "right";
+var d=document.createElement("textarea");
+d.setAttribute("wrap","off");
+d.setAttribute("spellcheck","false");
+d.setAttribute("autocorrect","off");
+d.setAttribute("autocomplete","off");
+d.setAttribute("autocapitalize","off");
+d.style.overflow="auto";
+d.style.resize="none";
+d.style.width="600px";
+d.style.height="360px";
+d.style.marginBottom="16px";
+d.value=mxUtils.getPrettyXml(a.editor.getGraphXml());
+c.appendChild(d);
+this.init=function(){d.focus()};
+Graph.fileSupport&&(d.addEventListener("dragover",function(a){a.stopPropagation();
+
+	3382: ExportDialog.exportFile=function(a,c,d,b,f,e){var h=a.editor.graph;
+if("xml"==d)ExportDialog.saveLocalFile(a,mxUtils.getXml(a.editor.getGraphXml()),c,d);
+else if("svg"==d)ExportDialog.saveLocalFile(a,mxUtils.getXml(h.getSvg(b,f,e)),c,d);
+else{var g=h.getGraphBounds(),k=mxUtils.createXmlDocument(),l=k.createElement("output");
+k.appendChild(l);
+k=new mxXmlCanvas2D(l);
+k.translate(Math.floor((e/f-g.x)/h.view.scale),Math.floor((e/f-g.y)/h.view.scale));
+k.scale(f/h.view.scale);
+(new mxImageExport).drawState(h.getView().getState(h.model.root),
+	12934: var b=Editor.prototype.getGraphXml;
+Editor.prototype.getGraphXml=function(a){a=null!=a?a:!0;
+var c=b.apply(this,arguments);
+null!=this.graph.currentStyle&&"default-style2"!=
+	13063: App.MODE_BROWSER||(d=null),a=this.getEmbeddedSvg(a,b,d,null,m,n,h);
+return a};
+EditorUi.prototype.getXmlFileData=function(a,b){a=null!=a?a:!0;
+b=null!=b?b:!1;
+var c=this.editor.getGraphXml(a);
+if(a&&null!=this.fileNode&&null!=this.currentPage){var d=this.editor.graph.compress(this.editor.graph.zapGremlins(mxUtils.getXml(c)));
+mxUtils.setTextContent(this.currentPage.node,d);
+c=this.fileNode.cloneNode(!1);
+if(b)c.appendChild(this.currentPage.node);
+else for(var f=0; f<this.pages.length; f++){var h=this.pages[f].mapping;
+
+	13075: h=f+"."+a;
+if("xml"==a){var k='<?xml version="1.0" encoding="UTF-8"?>\n'+(b?mxUtils.getXml(this.editor.getGraphXml(d)):this.getFileData(!0,null,null,null,d,e));
+this.saveData(h,a,k,"text/xml")}else if("html"==a)k=this.getHtml2(this.getFileData(!0),this.editor.graph,f),this.saveData(h,a,k,"text/html");
+else if("svg"!=a&&"xmlsvg"!=a||!this.spinner.spin(document.body,mxResources.get("export")))"xmlpng"==a?h=f+".png":"jpeg"==a&&(h=f+".jpg"),this.saveRequest(h,a,mxUtils.bind(this,function(b,c){try{var f=
+	13080: null!=urlParams.title?decodeURIComponent(urlParams.title):this.defaultFilename,!0);
+c.getHash=function(){return d};
+this.fileLoaded(c);
+"csv"==a.format&&this.importCsv(f,mxUtils.bind(this,function(a){this.editor.undoManager.clear();
+this.editor.setModified(!1);
+this.editor.setStatus("")}));
+if(null!=a.update){var h=null!=a.interval?parseInt(a.interval):6E4,k=null,e=mxUtils.bind(this,function(){var b=this.currentPage;
+mxUtils.post(a.update,"xml="+encodeURIComponent(mxUtils.getXml(this.editor.getGraphXml())),
+	13155: this.getFileData(!0,null,null,null,null,null,null,!0):this.editor.graph.compress(mxUtils.getXml(this.editor.getGraphXml()))):(c="#"+f.getHash(),a=!1));
+a&&null!=f&&null!=f.getTitle()&&f.getTitle()!=this.defaultFilename&&h.push("title="+encodeURIComponent(f.getTitle()));
+return(mxClient.IS_CHROMEAPP||EditorUi.isElectronApp||!/.*\.draw\.io$/.test(window.location.hostname)?"https://www.draw.io/":"https://"+window.location.host+"/")+(0<h.length?"?"+h.join("&"):"")+c};
+EditorUi.prototype.createHtml=function(a,
+	13300: h.xml&&0<h.xml.length&&this.setFileData(h.xml);
+v=this.createLoadMessage("export");
+if("html2"==h.format||"html"==h.format&&("0"!=urlParams.pages||null!=this.pages&&1<this.pages.length))k=this.getXmlFileData(),v.xml=mxUtils.getXml(k),v.data=this.getFileData(null,null,!0,null,null,null,k),v.format=h.format;
+else if("html"==h.format)u=this.editor.getGraphXml(),v.data=this.getHtml(u,this.editor.graph),v.xml=mxUtils.getXml(u),v.format=h.format;
+else{mxSvgCanvas2D.prototype.foAltText=null;
+k=this.editor.graph.background;
+
+	13304: this.buttonContainer.appendChild(l),this.embedFilenameSpan=l),h=null!=h.xmlpng?this.extractGraphModelFromPng(h.xmlpng):h.xml;
+else{g.postMessage(JSON.stringify({error:"unknownMessage",data:JSON.stringify(h)}),"*");
+return}}}var D=mxUtils.bind(this,function(f,h){c=!0;
+try{a(f,h)}catch(T){this.handleError(T)}c=!1;
+null!=urlParams.modified&&this.editor.setStatus("");
+var k=mxUtils.bind(this,function(){return"0"!=urlParams.pages||null!=this.pages&&1<this.pages.length?this.getFileData(!0):mxUtils.getXml(this.editor.getGraphXml())});
+
+	13340: c)a.hideDialog(),a.saveData(b,"xml",mxUtils.getXml(a.editor.getGraphXml()),"text/xml");
+else if("svg"==c)a.hideDialog(),a.saveData(b,"svg",mxUtils.getXml(f.getSvg(d,e,g)),"image/svg+xml");
+else{var h=a.getFileData(!0,null,null,null,null,!0),l=f.getGraphBounds(),k=Math.floor(l.width*e/f.view.scale),m=Math.floor(l.height*e/f.view.scale);
+h.length<=MAX_REQUEST_SIZE&&k*m<MAX_AREA?(a.hideDialog(),a.saveRequest(b,c,function(a,b){return new mxXmlRequest(EXPORT_URL,"format="+c+"&base64="+(b||"0")+(null!=a?"&filename="+
+	13893: 360,170,!0,!1)});
+h=a.actions.addAction("search",function(){var b=a.sidebar.isEntryVisible("search");
+a.sidebar.showPalette("search",!b);
+isLocalStorage&&(mxSettings.settings.search=!b,mxSettings.save())});
+h.setToggleAction(!0);
+h.setSelectedCallback(function(){return a.sidebar.isEntryVisible("search")});
+"1"==urlParams.embed&&(a.actions.get("save").funct=function(b){d.isEditing()&&d.stopEditing();
+var c="0"!=urlParams.pages||null!=a.pages&&1<a.pages.length?a.getFileData(!0):mxUtils.getXml(a.editor.getGraphXml());
+
+	13943: SelectPage.prototype.execute=function(){var a=mxUtils.indexOf(this.ui.pages,this.previousPage);
+if(null!=this.page&&0<=a){var a=this.ui.currentPage,b=this.ui.editor,d=b.graph,c=b.graph.compress(d.zapGremlins(mxUtils.getXml(b.getGraphXml(!0))));
+mxUtils.setTextContent(a.node,c);
+a.viewState=d.getViewState();
+a.root=d.model.root;
+null!=a.model&&a.model.rootChanged(a.root);
+d.view.clear(a.root,!0);
+d.clearSelection();
+this.ui.currentPage=this.previousPage;
+this.previousPage=a;
+a=this.ui.currentPage;
+d.model.rootChanged(a.root);
+
+
+e .\src\main\webapp\js\atlas-viewer.min.js
+	1987: Editor.prototype.getGraphXml=function(a){a=(null!=a?a:1)?(new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()):this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
+if(0!=this.graph.view.translate.x||0!=this.graph.view.translate.y)a.setAttribute("dx",Math.round(100*this.graph.view.translate.x)/100),a.setAttribute("dy",Math.round(100*this.graph.view.translate.y)/100);
+a.setAttribute("grid",this.graph.isGridEnabled()?"1":"0");
+a.setAttribute("gridSize",
+	2133: EditorUi.prototype.getEditBlankXml=function(){return mxUtils.getXml(this.editor.getGraphXml())};
+EditorUi.prototype.getUrl=function(a){a=null!=a?a:window.location.pathname;
+var c=0<a.indexOf("?")?1:0,e;
+for(e in urlParams)a=0==c?a+"?":a+"&",a+=e+"="+urlParams[e],c++;
+return a};
+
+	2179: EditorUi.prototype.save=function(a){if(null!=a){this.editor.graph.isEditing()&&this.editor.graph.stopEditing();
+var c=mxUtils.getXml(this.editor.getGraphXml());
+try{if(Editor.useLocalStorage){if(null!=localStorage.getItem(a)&&!mxUtils.confirm(mxResources.get("replaceIt",[a])))return;
+localStorage.setItem(a,c);
+this.editor.setStatus(mxUtils.htmlEntities(mxResources.get("saved"))+" "+new Date)}else if(c.length<MAX_REQUEST_SIZE)(new mxXmlRequest(SAVE_URL,"filename="+encodeURIComponent(a)+"&xml="+encodeURIComponent(c))).simulate(document,
+	2691: this.graph.useCssTransforms=!mxClient.NO_FO&&this.isChromelessView()&&this.graph.isCssTransformsSupported();
+this.graph.updateCssTransform();
+this.graph.setShadowVisible("1"==d.getAttribute("shadow"),!1)}a.apply(this,arguments)}else throw{message:mxResources.get("notADiagramFile")||"Invalid data",toString:function(){return this.message}};
+};
+var c=Editor.prototype.getGraphXml;
+Editor.prototype.getGraphXml=function(a){a=null!=a?a:!0;
+var d=c.apply(this,arguments);
+null!=this.graph.currentStyle&&"default-style2"!=
+	2820: App.MODE_BROWSER||(e=null),a=this.getEmbeddedSvg(a,b,e,null,h,v,f);
+return a};
+EditorUi.prototype.getXmlFileData=function(a,b){a=null!=a?a:!0;
+b=null!=b?b:!1;
+var d=this.editor.getGraphXml(a);
+if(a&&null!=this.fileNode&&null!=this.currentPage){var c=this.editor.graph.compress(this.editor.graph.zapGremlins(mxUtils.getXml(d)));
+mxUtils.setTextContent(this.currentPage.node,c);
+d=this.fileNode.cloneNode(!1);
+if(b)d.appendChild(this.currentPage.node);
+else for(var f=0;
+f<this.pages.length;
+f++){var e=this.pages[f].mapping;
+
+	2832: f=d+"."+a;
+if("xml"==a){var g='<?xml version="1.0" encoding="UTF-8"?>\n'+(b?mxUtils.getXml(this.editor.getGraphXml(e)):this.getFileData(!0,null,null,null,e,r));
+this.saveData(f,a,g,"text/xml")}else if("html"==a)g=this.getHtml2(this.getFileData(!0),this.editor.graph,d),this.saveData(f,a,g,"text/html");
+else if("svg"!=a&&"xmlsvg"!=a||!this.spinner.spin(document.body,mxResources.get("export")))"xmlpng"==a?f=d+".png":"jpeg"==a&&(f=d+".jpg"),this.saveRequest(f,a,mxUtils.bind(this,function(d,b){try{var c=
+	2837: null!=urlParams.title?decodeURIComponent(urlParams.title):this.defaultFilename,!0);
+c.getHash=function(){return d};
+this.fileLoaded(c);
+"csv"==a.format&&this.importCsv(f,mxUtils.bind(this,function(a){this.editor.undoManager.clear();
+this.editor.setModified(!1);
+this.editor.setStatus("")}));
+if(null!=a.update){var e=null!=a.interval?parseInt(a.interval):6E4,g=null,k=mxUtils.bind(this,function(){var d=this.currentPage;
+mxUtils.post(a.update,"xml="+encodeURIComponent(mxUtils.getXml(this.editor.getGraphXml())),
+	2912: this.getFileData(!0,null,null,null,null,null,null,!0):this.editor.graph.compress(mxUtils.getXml(this.editor.getGraphXml()))):(c="#"+d.getHash(),a=!1));
+a&&null!=d&&null!=d.getTitle()&&d.getTitle()!=this.defaultFilename&&f.push("title="+encodeURIComponent(d.getTitle()));
+return(mxClient.IS_CHROMEAPP||EditorUi.isElectronApp||!/.*\.draw\.io$/.test(window.location.hostname)?"https://www.draw.io/":"https://"+window.location.host+"/")+(0<f.length?"?"+f.join("&"):"")+c};
+EditorUi.prototype.createHtml=function(a,
+	3057: g.xml&&0<g.xml.length&&this.setFileData(g.xml);
+p=this.createLoadMessage("export");
+if("html2"==g.format||"html"==g.format&&("0"!=urlParams.pages||null!=this.pages&&1<this.pages.length))h=this.getXmlFileData(),p.xml=mxUtils.getXml(h),p.data=this.getFileData(null,null,!0,null,null,null,h),p.format=g.format;
+else if("html"==g.format)q=this.editor.getGraphXml(),p.data=this.getHtml(q,this.editor.graph),p.xml=mxUtils.getXml(q),p.format=g.format;
+else{mxSvgCanvas2D.prototype.foAltText=null;
+h=this.editor.graph.background;
+
+	3061: this.buttonContainer.appendChild(k),this.embedFilenameSpan=k),g=null!=g.xmlpng?this.extractGraphModelFromPng(g.xmlpng):g.xml;
+else{n.postMessage(JSON.stringify({error:"unknownMessage",data:JSON.stringify(g)}),"*");
+return}}}var C=mxUtils.bind(this,function(f,g){d=!0;
+try{a(f,g)}catch(X){this.handleError(X)}d=!1;
+null!=urlParams.modified&&this.editor.setStatus("");
+var h=mxUtils.bind(this,function(){return"0"!=urlParams.pages||null!=this.pages&&1<this.pages.length?this.getFileData(!0):mxUtils.getXml(this.editor.getGraphXml())});
+
+	3097: c)a.hideDialog(),a.saveData(b,"xml",mxUtils.getXml(a.editor.getGraphXml()),"text/xml");
+else if("svg"==c)a.hideDialog(),a.saveData(b,"svg",mxUtils.getXml(d.getSvg(e,h,l)),"image/svg+xml");
+else{var f=a.getFileData(!0,null,null,null,null,!0),g=d.getGraphBounds(),k=Math.floor(g.width*h/d.view.scale),m=Math.floor(g.height*h/d.view.scale);
+f.length<=MAX_REQUEST_SIZE&&k*m<MAX_AREA?(a.hideDialog(),a.saveRequest(b,c,function(a,b){return new mxXmlRequest(EXPORT_URL,"format="+c+"&base64="+(b||"0")+(null!=a?"&filename="+
+	3102: SelectPage.prototype.execute=function(){var a=mxUtils.indexOf(this.ui.pages,this.previousPage);
+if(null!=this.page&&0<=a){var a=this.ui.currentPage,c=this.ui.editor,e=c.graph,b=c.graph.compress(e.zapGremlins(mxUtils.getXml(c.getGraphXml(!0))));
+mxUtils.setTextContent(a.node,b);
+a.viewState=e.getViewState();
+a.root=e.model.root;
+null!=a.model&&a.model.rootChanged(a.root);
+e.view.clear(a.root,!0);
+e.clearSelection();
+this.ui.currentPage=this.previousPage;
+this.previousPage=a;
+a=this.ui.currentPage;
+e.model.rootChanged(a.root);
+
+
+e .\src\main\webapp\js\atlas.min.js
+	1986: Editor.prototype.getGraphXml=function(a){a=(null!=a?a:1)?(new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()):this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
+if(0!=this.graph.view.translate.x||0!=this.graph.view.translate.y)a.setAttribute("dx",Math.round(100*this.graph.view.translate.x)/100),a.setAttribute("dy",Math.round(100*this.graph.view.translate.y)/100);
+a.setAttribute("grid",this.graph.isGridEnabled()?"1":"0");
+a.setAttribute("gridSize",
+	2134: EditorUi.prototype.getEditBlankXml=function(){return mxUtils.getXml(this.editor.getGraphXml())};
+EditorUi.prototype.getUrl=function(a){a=null!=a?a:window.location.pathname;
+var c=0<a.indexOf("?")?1:0,d;
+for(d in urlParams)a=0==c?a+"?":a+"&",a+=d+"="+urlParams[d],c++;
+return a};
+
+	2180: EditorUi.prototype.save=function(a){if(null!=a){this.editor.graph.isEditing()&&this.editor.graph.stopEditing();
+var c=mxUtils.getXml(this.editor.getGraphXml());
+try{if(Editor.useLocalStorage){if(null!=localStorage.getItem(a)&&!mxUtils.confirm(mxResources.get("replaceIt",[a])))return;
+localStorage.setItem(a,c);
+this.editor.setStatus(mxUtils.htmlEntities(mxResources.get("saved"))+" "+new Date)}else if(c.length<MAX_REQUEST_SIZE)(new mxXmlRequest(SAVE_URL,"filename="+encodeURIComponent(a)+"&xml="+encodeURIComponent(c))).simulate(document,
+	3182: "right";
+var d=document.createElement("textarea");
+d.setAttribute("wrap","off");
+d.setAttribute("spellcheck","false");
+d.setAttribute("autocorrect","off");
+d.setAttribute("autocomplete","off");
+d.setAttribute("autocapitalize","off");
+d.style.overflow="auto";
+d.style.resize="none";
+d.style.width="600px";
+d.style.height="360px";
+d.style.marginBottom="16px";
+d.value=mxUtils.getPrettyXml(a.editor.getGraphXml());
+c.appendChild(d);
+this.init=function(){d.focus()};
+Graph.fileSupport&&(d.addEventListener("dragover",function(a){a.stopPropagation();
+
+	3200: ExportDialog.exportFile=function(a,c,d,b,f,e){var h=a.editor.graph;
+if("xml"==d)ExportDialog.saveLocalFile(a,mxUtils.getXml(a.editor.getGraphXml()),c,d);
+else if("svg"==d)ExportDialog.saveLocalFile(a,mxUtils.getXml(h.getSvg(b,f,e)),c,d);
+else{var g=h.getGraphBounds(),k=mxUtils.createXmlDocument(),l=k.createElement("output");
+k.appendChild(l);
+k=new mxXmlCanvas2D(l);
+k.translate(Math.floor((e/f-g.x)/h.view.scale),Math.floor((e/f-g.y)/h.view.scale));
+k.scale(f/h.view.scale);
+(new mxImageExport).drawState(h.getView().getState(h.model.root),
+	7495: this.graph.useCssTransforms=!mxClient.NO_FO&&this.isChromelessView()&&this.graph.isCssTransformsSupported();
+this.graph.updateCssTransform();
+this.graph.setShadowVisible("1"==a.getAttribute("shadow"),!1)}b.apply(this,arguments)}else throw{message:mxResources.get("notADiagramFile")||"Invalid data",toString:function(){return this.message}};
+};
+var e=Editor.prototype.getGraphXml;
+Editor.prototype.getGraphXml=function(a){a=null!=a?a:!0;
+var b=e.apply(this,arguments);
+null!=this.graph.currentStyle&&"default-style2"!=
+	7624: App.MODE_BROWSER||(d=null),a=this.getEmbeddedSvg(a,b,d,null,k,l,h);
+return a};
+EditorUi.prototype.getXmlFileData=function(a,b){a=null!=a?a:!0;
+b=null!=b?b:!1;
+var c=this.editor.getGraphXml(a);
+if(a&&null!=this.fileNode&&null!=this.currentPage){var f=this.editor.graph.compress(this.editor.graph.zapGremlins(mxUtils.getXml(c)));
+mxUtils.setTextContent(this.currentPage.node,f);
+c=this.fileNode.cloneNode(!1);
+if(b)c.appendChild(this.currentPage.node);
+else for(var d=0;
+d<this.pages.length;
+d++){var e=this.pages[d].mapping;
+
+	7636: h=f+"."+a;
+if("xml"==a){var m='<?xml version="1.0" encoding="UTF-8"?>\n'+(b?mxUtils.getXml(this.editor.getGraphXml(d)):this.getFileData(!0,null,null,null,d,e));
+this.saveData(h,a,m,"text/xml")}else if("html"==a)m=this.getHtml2(this.getFileData(!0),this.editor.graph,f),this.saveData(h,a,m,"text/html");
+else if("svg"!=a&&"xmlsvg"!=a||!this.spinner.spin(document.body,mxResources.get("export")))"xmlpng"==a?h=f+".png":"jpeg"==a&&(h=f+".jpg"),this.saveRequest(h,a,mxUtils.bind(this,function(b,c){try{var f=
+	7641: null!=urlParams.title?decodeURIComponent(urlParams.title):this.defaultFilename,!0);
+c.getHash=function(){return f};
+this.fileLoaded(c);
+"csv"==a.format&&this.importCsv(h,mxUtils.bind(this,function(a){this.editor.undoManager.clear();
+this.editor.setModified(!1);
+this.editor.setStatus("")}));
+if(null!=a.update){var d=null!=a.interval?parseInt(a.interval):6E4,e=null,q=mxUtils.bind(this,function(){var b=this.currentPage;
+mxUtils.post(a.update,"xml="+encodeURIComponent(mxUtils.getXml(this.editor.getGraphXml())),
+	7716: this.getFileData(!0,null,null,null,null,null,null,!0):this.editor.graph.compress(mxUtils.getXml(this.editor.getGraphXml()))):(c="#"+f.getHash(),a=!1));
+a&&null!=f&&null!=f.getTitle()&&f.getTitle()!=this.defaultFilename&&h.push("title="+encodeURIComponent(f.getTitle()));
+return(mxClient.IS_CHROMEAPP||EditorUi.isElectronApp||!/.*\.draw\.io$/.test(window.location.hostname)?"https://www.draw.io/":"https://"+window.location.host+"/")+(0<h.length?"?"+h.join("&"):"")+c};
+EditorUi.prototype.createHtml=function(a,
+	7861: g.xml&&0<g.xml.length&&this.setFileData(g.xml);
+p=this.createLoadMessage("export");
+if("html2"==g.format||"html"==g.format&&("0"!=urlParams.pages||null!=this.pages&&1<this.pages.length))m=this.getXmlFileData(),p.xml=mxUtils.getXml(m),p.data=this.getFileData(null,null,!0,null,null,null,m),p.format=g.format;
+else if("html"==g.format)q=this.editor.getGraphXml(),p.data=this.getHtml(q,this.editor.graph),p.xml=mxUtils.getXml(q),p.format=g.format;
+else{mxSvgCanvas2D.prototype.foAltText=null;
+m=this.editor.graph.background;
+
+	7865: this.buttonContainer.appendChild(h),this.embedFilenameSpan=h),g=null!=g.xmlpng?this.extractGraphModelFromPng(g.xmlpng):g.xml;
+else{k.postMessage(JSON.stringify({error:"unknownMessage",data:JSON.stringify(g)}),"*");
+return}}}var z=mxUtils.bind(this,function(f,g){c=!0;
+try{a(f,g)}catch(T){this.handleError(T)}c=!1;
+null!=urlParams.modified&&this.editor.setStatus("");
+var m=mxUtils.bind(this,function(){return"0"!=urlParams.pages||null!=this.pages&&1<this.pages.length?this.getFileData(!0):mxUtils.getXml(this.editor.getGraphXml())});
+
+	7901: c)a.hideDialog(),a.saveData(b,"xml",mxUtils.getXml(a.editor.getGraphXml()),"text/xml");
+else if("svg"==c)a.hideDialog(),a.saveData(b,"svg",mxUtils.getXml(f.getSvg(d,e,g)),"image/svg+xml");
+else{var h=a.getFileData(!0,null,null,null,null,!0),k=f.getGraphBounds(),m=Math.floor(k.width*e/f.view.scale),l=Math.floor(k.height*e/f.view.scale);
+h.length<=MAX_REQUEST_SIZE&&m*l<MAX_AREA?(a.hideDialog(),a.saveRequest(b,c,function(a,b){return new mxXmlRequest(EXPORT_URL,"format="+c+"&base64="+(b||"0")+(null!=a?"&filename="+
+	8135: 360,170,!0,!1)});
+f=b.actions.addAction("search",function(){var a=b.sidebar.isEntryVisible("search");
+b.sidebar.showPalette("search",!a);
+isLocalStorage&&(mxSettings.settings.search=!a,mxSettings.save())});
+f.setToggleAction(!0);
+f.setSelectedCallback(function(){return b.sidebar.isEntryVisible("search")});
+"1"==urlParams.embed&&(b.actions.get("save").funct=function(a){d.isEditing()&&d.stopEditing();
+var c="0"!=urlParams.pages||null!=b.pages&&1<b.pages.length?b.getFileData(!0):mxUtils.getXml(b.editor.getGraphXml());
+
+	8185: SelectPage.prototype.execute=function(){var b=mxUtils.indexOf(this.ui.pages,this.previousPage);
+if(null!=this.page&&0<=b){var b=this.ui.currentPage,e=this.ui.editor,d=e.graph,c=e.graph.compress(d.zapGremlins(mxUtils.getXml(e.getGraphXml(!0))));
+mxUtils.setTextContent(b.node,c);
+b.viewState=d.getViewState();
+b.root=d.model.root;
+null!=b.model&&b.model.rootChanged(b.root);
+d.view.clear(b.root,!0);
+d.clearSelection();
+this.ui.currentPage=this.previousPage;
+this.previousPage=b;
+b=this.ui.currentPage;
+d.model.rootChanged(b.root);
+
+
+e .\src\main\webapp\js\viewer.min.js
+	1987: Editor.prototype.getGraphXml=function(a){a=(null!=a?a:1)?(new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()):this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
+if(0!=this.graph.view.translate.x||0!=this.graph.view.translate.y)a.setAttribute("dx",Math.round(100*this.graph.view.translate.x)/100),a.setAttribute("dy",Math.round(100*this.graph.view.translate.y)/100);
+a.setAttribute("grid",this.graph.isGridEnabled()?"1":"0");
+a.setAttribute("gridSize",
+	2121: EditorUi.prototype.getEditBlankXml=function(){return mxUtils.getXml(this.editor.getGraphXml())};
+EditorUi.prototype.getUrl=function(a){a=null!=a?a:window.location.pathname;
+var c=0<a.indexOf("?")?1:0,e;
+for(e in urlParams)a=0==c?a+"?":a+"&",a+=e+"="+urlParams[e],c++;
+return a};
+
+	2167: EditorUi.prototype.save=function(a){if(null!=a){this.editor.graph.isEditing()&&this.editor.graph.stopEditing();
+var c=mxUtils.getXml(this.editor.getGraphXml());
+try{if(Editor.useLocalStorage){if(null!=localStorage.getItem(a)&&!mxUtils.confirm(mxResources.get("replaceIt",[a])))return;
+localStorage.setItem(a,c);
+this.editor.setStatus(mxUtils.htmlEntities(mxResources.get("saved"))+" "+new Date)}else if(c.length<MAX_REQUEST_SIZE)(new mxXmlRequest(SAVE_URL,"filename="+encodeURIComponent(a)+"&xml="+encodeURIComponent(c))).simulate(document,
+	2679: this.graph.useCssTransforms=!mxClient.NO_FO&&this.isChromelessView()&&this.graph.isCssTransformsSupported();
+this.graph.updateCssTransform();
+this.graph.setShadowVisible("1"==d.getAttribute("shadow"),!1)}a.apply(this,arguments)}else throw{message:mxResources.get("notADiagramFile")||"Invalid data",toString:function(){return this.message}};
+};
+var c=Editor.prototype.getGraphXml;
+Editor.prototype.getGraphXml=function(a){a=null!=a?a:!0;
+var d=c.apply(this,arguments);
+null!=this.graph.currentStyle&&"default-style2"!=
+	2808: App.MODE_BROWSER||(e=null),a=this.getEmbeddedSvg(a,b,e,null,h,v,f);
+return a};
+EditorUi.prototype.getXmlFileData=function(a,b){a=null!=a?a:!0;
+b=null!=b?b:!1;
+var d=this.editor.getGraphXml(a);
+if(a&&null!=this.fileNode&&null!=this.currentPage){var c=this.editor.graph.compress(this.editor.graph.zapGremlins(mxUtils.getXml(d)));
+mxUtils.setTextContent(this.currentPage.node,c);
+d=this.fileNode.cloneNode(!1);
+if(b)d.appendChild(this.currentPage.node);
+else for(var f=0;
+f<this.pages.length;
+f++){var e=this.pages[f].mapping;
+
+	2820: f=d+"."+a;
+if("xml"==a){var g='<?xml version="1.0" encoding="UTF-8"?>\n'+(b?mxUtils.getXml(this.editor.getGraphXml(e)):this.getFileData(!0,null,null,null,e,r));
+this.saveData(f,a,g,"text/xml")}else if("html"==a)g=this.getHtml2(this.getFileData(!0),this.editor.graph,d),this.saveData(f,a,g,"text/html");
+else if("svg"!=a&&"xmlsvg"!=a||!this.spinner.spin(document.body,mxResources.get("export")))"xmlpng"==a?f=d+".png":"jpeg"==a&&(f=d+".jpg"),this.saveRequest(f,a,mxUtils.bind(this,function(d,b){try{var c=
+	2825: null!=urlParams.title?decodeURIComponent(urlParams.title):this.defaultFilename,!0);
+c.getHash=function(){return d};
+this.fileLoaded(c);
+"csv"==a.format&&this.importCsv(f,mxUtils.bind(this,function(a){this.editor.undoManager.clear();
+this.editor.setModified(!1);
+this.editor.setStatus("")}));
+if(null!=a.update){var e=null!=a.interval?parseInt(a.interval):6E4,g=null,k=mxUtils.bind(this,function(){var d=this.currentPage;
+mxUtils.post(a.update,"xml="+encodeURIComponent(mxUtils.getXml(this.editor.getGraphXml())),
+	2900: this.getFileData(!0,null,null,null,null,null,null,!0):this.editor.graph.compress(mxUtils.getXml(this.editor.getGraphXml()))):(c="#"+d.getHash(),a=!1));
+a&&null!=d&&null!=d.getTitle()&&d.getTitle()!=this.defaultFilename&&f.push("title="+encodeURIComponent(d.getTitle()));
+return(mxClient.IS_CHROMEAPP||EditorUi.isElectronApp||!/.*\.draw\.io$/.test(window.location.hostname)?"https://www.draw.io/":"https://"+window.location.host+"/")+(0<f.length?"?"+f.join("&"):"")+c};
+EditorUi.prototype.createHtml=function(a,
+	3045: g.xml&&0<g.xml.length&&this.setFileData(g.xml);
+p=this.createLoadMessage("export");
+if("html2"==g.format||"html"==g.format&&("0"!=urlParams.pages||null!=this.pages&&1<this.pages.length))h=this.getXmlFileData(),p.xml=mxUtils.getXml(h),p.data=this.getFileData(null,null,!0,null,null,null,h),p.format=g.format;
+else if("html"==g.format)q=this.editor.getGraphXml(),p.data=this.getHtml(q,this.editor.graph),p.xml=mxUtils.getXml(q),p.format=g.format;
+else{mxSvgCanvas2D.prototype.foAltText=null;
+h=this.editor.graph.background;
+
+	3049: this.buttonContainer.appendChild(k),this.embedFilenameSpan=k),g=null!=g.xmlpng?this.extractGraphModelFromPng(g.xmlpng):g.xml;
+else{n.postMessage(JSON.stringify({error:"unknownMessage",data:JSON.stringify(g)}),"*");
+return}}}var C=mxUtils.bind(this,function(f,g){d=!0;
+try{a(f,g)}catch(X){this.handleError(X)}d=!1;
+null!=urlParams.modified&&this.editor.setStatus("");
+var h=mxUtils.bind(this,function(){return"0"!=urlParams.pages||null!=this.pages&&1<this.pages.length?this.getFileData(!0):mxUtils.getXml(this.editor.getGraphXml())});
+
+	3085: c)a.hideDialog(),a.saveData(b,"xml",mxUtils.getXml(a.editor.getGraphXml()),"text/xml");
+else if("svg"==c)a.hideDialog(),a.saveData(b,"svg",mxUtils.getXml(d.getSvg(e,h,l)),"image/svg+xml");
+else{var f=a.getFileData(!0,null,null,null,null,!0),g=d.getGraphBounds(),k=Math.floor(g.width*h/d.view.scale),m=Math.floor(g.height*h/d.view.scale);
+f.length<=MAX_REQUEST_SIZE&&k*m<MAX_AREA?(a.hideDialog(),a.saveRequest(b,c,function(a,b){return new mxXmlRequest(EXPORT_URL,"format="+c+"&base64="+(b||"0")+(null!=a?"&filename="+
+	3090: SelectPage.prototype.execute=function(){var a=mxUtils.indexOf(this.ui.pages,this.previousPage);
+if(null!=this.page&&0<=a){var a=this.ui.currentPage,c=this.ui.editor,e=c.graph,b=c.graph.compress(e.zapGremlins(mxUtils.getXml(c.getGraphXml(!0))));
+mxUtils.setTextContent(a.node,b);
+a.viewState=e.getViewState();
+a.root=e.model.root;
+null!=a.model&&a.model.rootChanged(a.root);
+e.view.clear(a.root,!0);
+e.clearSelection();
+this.ui.currentPage=this.previousPage;
+this.previousPage=a;
+a=this.ui.currentPage;
+e.model.rootChanged(a.root);
+
+
+e .\src\main\webapp\js\diagramly\Editor.js
+	529: 	var editorGetGraphXml = Editor.prototype.getGraphXml;
+	
+	530: 	Editor.prototype.getGraphXml = function(ignoreSelection)
+
+e .\src\main\webapp\js\diagramly\EditorUi.js
+	749: 		var node = this.editor.getGraphXml(ignoreSelection);
+
+	1086: 		    		((nonCompressed) ? mxUtils.getXml(this.editor.getGraphXml(ignoreSelection)) :
+	1319: 						mxUtils.getXml(this.editor.getGraphXml())),
+	4046: 					this.editor.graph.compress(mxUtils.getXml(this.editor.getGraphXml())))
+	9539: 							var xml = this.editor.getGraphXml();
+
+	9684: 						this.getFileData(true): mxUtils.getXml(this.editor.getGraphXml());
+
+	10866: 				editorUi.saveData(name, 'xml', mxUtils.getXml(editorUi.editor.getGraphXml()), 'text/xml');
+
+
+e .\src\main\webapp\js\diagramly\Menus.js
+	1375: 					editorUi.getFileData(true) : mxUtils.getXml(editorUi.editor.getGraphXml());
+
+
+e .\src\main\webapp\js\diagramly\Pages.js
+	162: 		var data = editor.graph.compress(graph.zapGremlins(mxUtils.getXml(editor.getGraphXml(true))));
+
+
+e .\src\main\webapp\js\mxgraph\Dialogs.js
+	681: 	textarea.value = mxUtils.getPrettyXml(editorUi.editor.getGraphXml());
+
+	1243:     	ExportDialog.saveLocalFile(editorUi, mxUtils.getXml(editorUi.editor.getGraphXml()), name, format);
+
+
+e .\src\main\webapp\js\mxgraph\Editor.js
+	526: Editor.prototype.getGraphXml = function(ignoreSelection)
+
+e .\src\main\webapp\js\mxgraph\EditorUi.js
+	2378: 	return mxUtils.getXml(this.editor.getGraphXml());
+
+	3500: 		var xml = mxUtils.getXml(this.editor.getGraphXml());
+
+
+e .\src\main\webapp\plugins\update.js
+	141: 					var currentXml = mxUtils.getXml(editorUi.editor.getGraphXml());
+
+

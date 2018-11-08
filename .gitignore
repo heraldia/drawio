@@ -2,5 +2,4 @@ bin
 build
 classes
 node_modules
-*.codereview
 relation.png
