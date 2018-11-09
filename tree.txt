@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "revert viewer.min.js as a bug 2018-11-08_154205.png"    
+!git commit -m "mac docker ok"
 !git add .
 !git push -u origin master
 git log viewer.min.js
@@ -2443,5 +2443,10 @@ https://beautifier.io/
 Sidebar.prototype.init = function() { 201811051606
 
 [2018-11-08 16:08:15]
-git checkout ./src/main/webapp/js/atlas-viewer.min.js
-git checkout ./src/main/webapp/js/viewer.min.js
+git checkout ./src/main/webapp/js/atlas-viewer.min.js on windows but not on mac
+git checkout ./src/main/webapp/js/viewer.min.js on windows but not on mac
+do not run docker on windows!!!!!
+can not compile
+[2018-11-09 07:55:25] target server is linux?
+edit file on docker
+
