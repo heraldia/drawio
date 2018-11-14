@@ -24,6 +24,7 @@ digraph drawIo{
 "DiagramFormatPanel" -> "addPaperSize" [label= "5412" ];
 "atlas.min.js"  -> "docProps/custom.xml" [label = "8809" ];
 "extensions.min.js" -> "docProps/custom.xml" [label = "485"]; 
+"to add esl size" [shape = box];
 "Editor.js" -> "to add esl size";
 
 "app.min.js" -> ":3348" ->"getGraphXml"; 
@@ -39,5 +40,5 @@ digraph drawIo{
 "clean up mainpage sidebar" [shape = box];
 "clean up mainpage sidebar" -> "app.min.js" -> "addPaletteFunctions";
 
-
+"app.html" -> "first page"
 }
