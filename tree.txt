@@ -1,6 +1,5 @@
 !git pull
 !git commit -m "todo cleaning create template page"
-
 !git add .
 !git push -u origin master
 git log viewer.min.js
@@ -10,6 +9,7 @@ https://blog.csdn.net/x1066988452/article/details/53782287
 git reset 80f2df1ce674e2e42f983b8cac21dc75b4d00c76 ./src/main/webapp/js/atlas-viewer.min.js
 git checkout ./src/main/webapp/js/atlas-viewer.min.js
 git checkout ./src/main/webapp/js/viewer.min.js
+http://localhost:8080/drawio/
 
 docker kill $(docker ps -a -q)
 docker stop $(docker ps -a -q)
@@ -260,13 +260,20 @@ d:\Software\dev\apache-ant-1.10.5\bin\ant.bat
 https://blog.csdn.net/yanghaitaohhh/article/details/9192431
 d:\work\templateGenerator\build\etc\build\
 
+git checkout ./src/main/webapp/js/atlas-viewer.min.js on windows but not on mac
+git checkout ./src/main/webapp/js/viewer.min.js on windows but not on mac
+do not run docker on windows!!!!!
+can not compile
+[2018-11-09 07:55:25] target server is linux?
+edit file on docker
 11/14 13PM manually zip webapp\* into .war
 11/14 13PM  
 http://localhost:8080/drawio
 works
 \build is from \etc and \src.
 from now on, i start to edit c:\Users\Yunfei Feng\eclipse-workspace\DrawIO\ f1
-or edit C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\ f2
+or edit 
+C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\ 
 
 cd d:\work\templateGenerator\drawio\build\etc\build\
 ant
@@ -290,3 +297,4 @@ this.createEdgeTemplateEntry("shape=flexArrow;endArrow=classic;startArrow=classi
 
 * cleaning create template page:
    viewer.min.js 43093 
+
