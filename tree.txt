@@ -297,4 +297,6 @@ this.createEdgeTemplateEntry("shape=flexArrow;endArrow=classic;startArrow=classi
 
 * cleaning create template page:
    viewer.min.js 43093 
+should be in app.min.js
+fromTemplateUrl 60008
 
