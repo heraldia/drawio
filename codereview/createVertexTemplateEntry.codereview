@@ -1,6 +1,0 @@
-#e .\src\main\webapp\js\app.min.js
-2515: Sidebar.prototype.createVertexTemplateEntry=function(a,c,d,b,f,e,h,g){g=null!=g&&0<g.length?g:f.toLowerCase();return this.addEntry(g,mxUtils.bind(this,function(){return this.createVertexTemplate(a,c,d,b,f,e,h)}))};Sidebar.prototype.createVertexTemplate=function(a,c,d,b,f,e,h,g){a=[new mxCell(null!=b?b:"",new mxGeometry(0,0,c,d),a)];a[0].vertex=!0;return this.createVertexTemplateFromCells(a,c,d,f,e,h,g)};
-#e .\src\main\webapp\js\atlas.min.js
-2382: Sidebar.prototype.createVertexTemplateEntry=function(a,c,d,b,f,e,h,g){g=null!=g&&0<g.length?g:f.toLowerCase();return this.addEntry(g,mxUtils.bind(this,function(){return this.createVertexTemplate(a,c,d,b,f,e,h)}))};Sidebar.prototype.createVertexTemplate=function(a,c,d,b,f,e,h,g){a=[new mxCell(null!=b?b:"",new mxGeometry(0,0,c,d),a)];a[0].vertex=!0;return this.createVertexTemplateFromCells(a,c,d,f,e,h,g)};
-#e .\src\main\webapp\js\mxgraph\Sidebar.js
-3233: Sidebar.prototype.createVertexTemplateEntry = function(style, width, height, value, title, showLabel, showTitle, tags)

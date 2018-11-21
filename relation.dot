@@ -1,4 +1,5 @@
 digraph drawIo{
+subgraph callFunction{
 //s: search 
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "app.min.js" -> 
 "viewer.min.js"->"1382"-> "mxGraph.prototype.getSelectionCells";
@@ -16,7 +17,8 @@ digraph drawIo{
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "atlas-view.min.js";
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "viewer.min.js";
 
-"app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" [label = "==", arrowhead="none" ];
+"app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" ->
+    "build/base.min.js"[label = "==", arrowhead="none" ];
 
 "s:Paper Size" [shape = box];
 "s:Paper Size" -> "app.min.js" -> "2856" -> "addPaperSize";
@@ -39,6 +41,60 @@ digraph drawIo{
 
 "clean up mainpage sidebar" [shape = box];
 "clean up mainpage sidebar" -> "app.min.js" -> "addPaletteFunctions";
-
 "app.html" -> "first page"
+}
+
+subgraph buildXml{
+node [style=filled];
+"delete" [shape = box];
+"shapes" -> "build/shapes.js" -> "shapes.min.js";
+"stencils" -> "build/shapes.js";
+"Editor.js"->"grapheditor.min.js";
+"EditorUi.js"->"grapheditor.min.js";
+"Sidebar.js"->"grapheditor.min.js";
+"Graph.js"->"grapheditor.min.js";
+"Shapes.js"->"grapheditor.min.js";
+"Shapes.js"->"grapheditor.min.js";
+"Actions.js"->"grapheditor.min.js";
+"Menus.js"->"grapheditor.min.js";
+"Toolbar.js"->"grapheditor.min.js";
+"Dialogs.js"->"grapheditor.min.js";
+"diagramly"->"sidebar.min.js";
+"diagramly"->"extensions.min.js";
+"vsdx"->"extensions.min.js";
+"deflate/base64.js"->"client.min.js";
+"diagramly/Init.js"->"client.min.js";
+"mxgraph/mxClient.js"->"client.min.js";
+"jscolor/jscolor.js"->"client.min.js";
+
+"spin.min.js"->"base-viewer.min.js";
+"sanitizer.min.js"->"base-viewer.min.js";
+"pako.min.js"->"base-viewer.min.js";
+"client.min.js"->"base-viewer.min.js";
+"base-viewer.min.js"->"viewer.min.js";
+
+"spin.min.js"->"base.min.js";
+"sanitizer.min.js"->"base.min.js";
+"pako.min.js"->"base.min.js";
+"client.min.js"->"base.min.js";
+"base-viewer.min.js"-> "base.min.js";
+"sidebar.min.js"-> "base.min.js";
+"vsdx"->"extensions.min.js";
+"jszip"->"extensions.min.js";
+"Graph-Stylesheet.js"->"delete";
+"Graph-Resources.js"->"delete";
+"grapheditor.min.js"->"delete";
+"sidebar.min.js"->"delete";
+"client.min.js"->"delete";
+"diagramly"->"app.min.js";
+"base.min.js"->"delete";
+"base-viewer.min.js"->"delete";
+"spin.min.js"->"app.min.js";
+"sanitizer.min.js"->"app.min.js";
+"pako.min.js"->"app.min.js";
+"client.min.js"->"app.min.js";
+"grapheditor.min.js"->"app.min.js";
+label = "ant build xml";
+color=blue
+}
 }

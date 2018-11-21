@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "todo cleaning create template page"
+!git commit -m "pc before holiday"
 !git add .
 !git push -u origin master
 git log viewer.min.js
@@ -24,10 +24,16 @@ http://localhost:8888/draw/?local=1
 
 !python searchAwordInAFolder.py BPMN
 !dot -Tpng relation.dot -o relation.png
+!dot -Tpng buildxml.dot -o buildxml.png
 
 shape = box
 shape = diamond
 shape = ellipse
+
+https://github.com/jgraph/drawio
+https://stackoverflow.com/questions/tagged/draw.io
+https://stackoverflow.com/questions/tagged/mxgraph
+https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html#mxGraph.getSelectionCells
 
 s/</\r</gc
 :%s/></>\r</g 
@@ -43,6 +49,10 @@ s/{/\r{/gc
  < : &lt ; >:&gt ;  ": &quot
 
 https://jgraph.github.io/mxgraph/
+[mxgraph的学习笔记.doc]
+https://max.book118.com/html/2017/0103/79641131.shtm
+[mxGraph API - HouYing - CSDN博客]
+https://blog.csdn.net/zwhfyy/article/details/52013543
 
 https://www.cnblogs.com/q4486233/p/6482711.html
 Docker 容器镜像删除
@@ -66,10 +76,11 @@ docker rmi $(docker images | grep "^<none>" | awk "{print $3})
 docker rmi $(docker images -q)
 
 requirement {{{2 todo
-1. a limited list of component [what kinds?]
-1. what size of esl?
-2. mxgraph.jar
+%a limited list of component [what kinds?]
+%what size of esl?
 4. xml <=> json java
+5. different digits in price to test
+6. gray out the template size after starting editing
 
 get the component types from backend.
 create another container running drools.org
@@ -79,8 +90,7 @@ create another container running drools.org
 other repos has json export? no
 
 https://groups.google.com/forum/#!forum/drawio
-[2018-10-22 13:05:52]
-where composed a xml file?
+2018-10-22 13:05:52 where composed a xml file?
 
 exportAs
 app.min.js:8439
@@ -175,7 +185,7 @@ atlas == Atlassian is a vendor of gliffy
 atlas.min.js == app.min.js
 alter atlas.min.js not affect ui
 app.min.js not affect UI paper size
-[2018-10-27 20:58:16] Editor.js affects UI paper size, add customized ESL size
+2018-10-27 20:58:16 Editor.js affects UI paper size, add customized ESL size
 app.min.js 130 mxResources
 
 app.min.js 11665
@@ -220,38 +230,37 @@ this.createDragPreview(f,e),a,l),this.addClickHandler(g,b,a));
 mxClient.IS_IOS||mxEvent.addGestureListeners(g,null,mxUtils.bind(this, function(b){mxEvent.isMouseEvent(b)&&this.showTooltip(g,a,l.width,l.height,c,d)}));
 return g};
 
-[2018-10-28 00:25:14] diagramly\Editor.js:1427 3. barcode / type option and write into xml done
-[2018-10-29 14:01:32] doing looking for how to generate a xml [failed]
+2018-10-28 00:25:14 diagramly\Editor.js:1427 3. barcode / type option and write into xml done
+2018-10-29 14:01:32 doing looking for how to generate a xml [failed]
 
-[2018-10-29 15:17:58] read hanshow's document, and sort component types in Hanshow's example
+2018-10-29 15:17:58 read hanshow's document, and sort component types in Hanshow's example
 price tag https://www.google.com/search?biw=1745&bih=797&tbm=isch&sa=1&ei=wGzXW_r0G4u8tgWF6bf4CQ&q=sams+price+tag&oq=sams+price+tag&gs_l=img.3..0i7i30.3699.5406..5612...2.0..0.73.252.4......1....1..gws-wiz-img.......0i8i7i30.BgeVHX5fGiY#imgdii=xm3JVI13gjEBfM:&imgrc=Rx1-gd146tIPNM:
-[2018-10-30 16:10:02] add label types done, object types
+2018-10-30 16:10:02 add label types done, object types
 barcode => barcode type, the frame boxing is barcode type
-[2018-11-02 10:25:18] todo expanded xml
+2018-11-02 10:25:18 todo expanded xml
 app.min.js
 a = (null != a ? a : 1) ? (new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()) :
 this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
-[2018-11-02 15:14:51] Found docs
-https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html#mxGraph.getSelectionCells
+2018-11-02 15:14:51 Found google group
 
 [Online JavaScript beautifier] 
 https://beautifier.io/ 
 
-[2018-11-05 10:40:12] Clean UI components
--[2018-11-05 10:45:44] Clean create page, failed todo
+2018-11-05 10:40:12 Clean UI components
+-2018-11-05 10:45:44 Clean create page, failed todo
 
-[2018-11-05 15:36:25] Clean sidebar in mainpage
+2018-11-05 15:36:25 Clean sidebar in mainpage
 -modifying 201811051543
 ./src/main/webapp/js/diagramly/sidebar/Sidebar-BPMN.js
 ./src/main/webapp/js/mxgraph/Sidebar.js 
 Sidebar.prototype.init = function() { 201811051606
 
-[2018-11-08 16:08:15]
+2018-11-08 16:08:15
 git checkout ./src/main/webapp/js/atlas-viewer.min.js
 git checkout ./src/main/webapp/js/viewer.min.js
 
 https://12factor.net/
-[11/14 12PM] learn ant
+11/14 12PM learn ant
 [使用ant打包WAR，超详细教程 - q125488500的博客 - CSDN博客]
 https://blog.csdn.net/q125488500/article/details/78579067
 ANT_HOME
@@ -264,7 +273,7 @@ git checkout ./src/main/webapp/js/atlas-viewer.min.js on windows but not on mac
 git checkout ./src/main/webapp/js/viewer.min.js on windows but not on mac
 do not run docker on windows!!!!!
 can not compile
-[2018-11-09 07:55:25] target server is linux?
+2018-11-09 07:55:25 target server is linux?
 edit file on docker
 11/14 13PM manually zip webapp\* into .war
 11/14 13PM  
@@ -299,4 +308,103 @@ this.createEdgeTemplateEntry("shape=flexArrow;endArrow=classic;startArrow=classi
    viewer.min.js 43093 
 should be in app.min.js
 fromTemplateUrl 60008
+
+2018-11-19 09:32:14 
+geDialog app.min.js 77404 71916 32742
+32714 function Dialog(a, c, d, b, f, e, h, g, k) {
+32751 r.appendChild(c);
+34914 <- 34911 
+77447
+from EditorUi.js :3292 elt
+
+geTemplate 59718
+done by renaming 
+c:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\templates\index.xml
+to index_ps.xml
+
+2018-11-19 10:21:04  
+* component type diamond todo
+
+2018-11-19 10:50:35 
+* default esl size when creating a new template on start page done
+app.min.js 59948
+
+2018-11-19 14:48:59
+[在JavaEE版本Eclipse中配置与使用Tomcat - y1iagx的博客 - CSDN博客] not works for me
+https://blog.csdn.net/y1iagx/article/details/52293737?locationNum=1
+DrawIOweb Deleted
+
+[Eclipse中使用Ant - fanxiaobin577328725 - CSDN博客]
+https://blog.csdn.net/fanxiaobin577328725/article/details/53612609
+
+2018-11-19 15:29:55 
+[ant的安装配置以及在Eclipse上集成使用] works but do not use ant, it will regenerate app.min.js
+https://blog.csdn.net/qq_31896043/article/details/52185220
+
+2018-11-20 08:37:14 
+ant eclipse done
+
+
+2018-11-20 09:30:49   
+* shortcut on header done
+app.min.js : 9173
+mxToolbar.prototype.addLine = function() {
+    var a = document.createElement("hr");
+    a.style.marginRight = "6px";
+    a.setAttribute("size", "1");
+    this.container.appendChild(a)
+}
+;
+app.min.js 78574 -< base.min.js:8143
+80614
+46612 overall insert
+
+47065
+ 440 <= a && (this.edgeShapeMenu = this.addMenuFunction("", mxResources.get("connection"), !1, mxUtils.bind(this, function(a) {
+    740 <= a && (this.addItems(["-", "fillColor"]),
+    780 <= a && (this.addItems(["strokeColor"]),
+    820 <= a && this.addItems(["shadow"])));
+    400 <= a && (this.addSeparator(),
+    440 <= a && (this.edgeShapeMenu = this.addMenuFunction("", mxResources.get("connection"), !1, mxUtils.bind(this, function(a) {
+        this.editorUi.menus.edgeStyleChange(a, "", [mxConstants.STYLE_SHAPE, "width"], [null, null], "geIcon geSprite geSprite-connection", null, !0).setAttribute("title", mxResources.get("line"));
+        this.editorUi.menus.edgeStyleChange(a, "", [mxConstants.STYLE_SHAPE, "width"], ["link", null], "geIcon geSprite geSprite-linkedge", null, !0).setAttribute("title", mxResources.get("link"));
+        this.editorUi.menus.edgeStyleChange(a, "", [mxConstants.STYLE_SHAPE, "width"], ["flexArrow", null], "geIcon geSprite geSprite-arrow", null, !0).setAttribute("title", mxResources.get("arrow"));
+        this.editorUi.menus.edgeStyleChange(a, "", [mxConstants.STYLE_SHAPE, "width"], ["arrow", null], "geIcon geSprite geSprite-simplearrow", null, !0).setAttribute("title", mxResources.get("simpleArrow"))
+    })),
+    this.addDropDownArrow(this.edgeShapeMenu, "geSprite-connection", 44, 50, 0, 0, 22, -4)),
+    this.edgeStyleMenu = this.addMenuFunction("geSprite-orthogonal", mxResources.get("waypoints"), !1, mxUtils.bind(this, function(a) {
+        this.editorUi.menus.edgeStyleChange(a, "", [mxConstants.STYLE_EDGE, m
+
+
+2018-11-20 10:12:01, 2018-11-20 10:14:38 
+* default esl size when create a new template after start page  todo
+app.min.js: 78510
+a.editor.editAsNew(this.editorUi.getFileData(!0), c)
+getFileData -> viewer.min.js 37421
+getStylesheet not this
+createTemporaryGraph not this 
+
+Graph.js: 1618
+Graph.prototype.getPageSize = function()
+
+2018-11-20 10:55:43
+* component type diamond// remove it
+* rhombus app.min.js 33757
+
+2018-11-20 14:45:45 todo
+add barcode
+add logo
+
+Which part of src is for "Paper Size"?
+app.mion.js 34775 
+formatContainer
+
+https://stackoverflow.com/questions/45205746/draw-io-is-there-non-minified-source
+https://jgraph.github.io/mxgraph/javascript/examples/grapheditor/www/index.html
+The full stack for draw.io is actually mxGraph->GraphEditor->draw.io.
+mxgraph.jar
+
+black friday to Febrary freeze everything. 
+After Feb, new requirement
+12 million / year 
 
