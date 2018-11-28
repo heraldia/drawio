@@ -305,6 +305,7 @@ formatVsdx=VSDX
 formatVssx=VSSX
 formatXmlPlain=XML (Plain)
 formatXml=XML
+formatJson=JSON
 forum=Discussion/Help Forums
 fromTemplate=From Template
 fromTemplateUrl=From Template URL

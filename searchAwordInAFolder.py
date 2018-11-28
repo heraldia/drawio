@@ -3,6 +3,7 @@ import sys
 import platform
 
 def searchAWord(filename, old_str, sysstr):
+    old_str = old_str.replace('SPACE', ' ')
     file_data = open("{}.codereview".format(old_str), 'a+')
     WROTEFILENAME = False
 

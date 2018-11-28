@@ -29,6 +29,7 @@ subgraph callFunction{
 "to add esl size" [shape = box];
 "Editor.js" -> "to add esl size";
 
+"app.min.js" [shape = diamond; color=red ];
 "app.min.js" -> ":3348" ->"getGraphXml"; 
 "app.min.js" -> ":1991" ->"generate XML header"; 
 "app.min.js" -> "s:getPrettyXml";
@@ -41,7 +42,7 @@ subgraph callFunction{
 
 "clean up mainpage sidebar" [shape = box];
 "clean up mainpage sidebar" -> "app.min.js" -> "addPaletteFunctions";
-"app.html" -> "first page"
+//"app.html" -> "first page"
 }
 
 subgraph buildXml{
@@ -50,7 +51,8 @@ node [style=filled];
 "shapes" -> "build/shapes.js" -> "shapes.min.js";
 "stencils" -> "build/shapes.js";
 "Editor.js"->"grapheditor.min.js";
-"EditorUi.js"->"grapheditor.min.js";
+"diagramly/EditorUi.js"->"grapheditor.min.js";
+"grapheditor/EditorUi.js"->"grapheditor.min.js";
 "Sidebar.js"->"grapheditor.min.js";
 "Graph.js"->"grapheditor.min.js";
 "Shapes.js"->"grapheditor.min.js";
@@ -60,11 +62,18 @@ node [style=filled];
 "Toolbar.js"->"grapheditor.min.js";
 "Dialogs.js"->"grapheditor.min.js";
 "diagramly"->"sidebar.min.js";
+"diagramly"-> "diagramly/EditorUi.js";
+"diagramly"-> "diagramly/Init.js";
 "diagramly"->"extensions.min.js";
 "vsdx"->"extensions.min.js";
 "deflate/base64.js"->"client.min.js";
 "diagramly/Init.js"->"client.min.js";
 "mxgraph/mxClient.js"->"client.min.js";
+"mxgraph/mxClient.js"-> "atlas.min.js";
+"mxgraph/mxClient.js"-> "atlas-viewer.min.js";
+"mxgraph/mxClient.js"-> "reader.min.js";
+"mxgraph/mxClient.js"-> "viewer.min.js";
+"mxgraph/mxClient.js"-> "embed-static.min.js";
 "jscolor/jscolor.js"->"client.min.js";
 
 "spin.min.js"->"base-viewer.min.js";

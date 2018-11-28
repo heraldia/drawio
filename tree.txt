@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "pc before holiday"
+!git commit -m "pc after holiday"
 !git add .
 !git push -u origin master
 git log viewer.min.js
@@ -21,10 +21,17 @@ docker build -t draw .
 docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
+http://localhost:8080/drawio/
+USAGE: 
+use firefox
+design template -> save to xml and json.
+xml for recovering the template in webpage
+json for merge.
+demo import: d:\work\templateGenerator\testcase_drawio\costume.xml
+d:\work\templateGenerator\testcase_drawio\philps\PHILIPSGood.xml
 
-!python searchAwordInAFolder.py BPMN
+!python searchAwordInAFolder.py varSPACEmxResources
 !dot -Tpng relation.dot -o relation.png
-!dot -Tpng buildxml.dot -o buildxml.png
 
 shape = box
 shape = diamond
@@ -42,6 +49,7 @@ s/\\n/\\n\r/gc
 s/;/;\r/gc
 s/},/},\r/gc
 s/,/,\r/gc
+s/, this/, \rthis/gc
 s/), /), \r/gc
 s/{/\r{/gc
 2222, 2246 s/}/}\r/gc
@@ -78,16 +86,12 @@ docker rmi $(docker images -q)
 requirement {{{2 todo
 %a limited list of component [what kinds?]
 %what size of esl?
-4. xml <=> json java
+format json 
 5. different digits in price to test
 6. gray out the template size after starting editing
-
 get the component types from backend.
 create another container running drools.org
-
-3. default compressed xml
 5. app.min.js default letter size 
-other repos has json export? no
 
 https://groups.google.com/forum/#!forum/drawio
 2018-10-22 13:05:52 where composed a xml file?
@@ -323,7 +327,7 @@ c:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\templates\
 to index_ps.xml
 
 2018-11-19 10:21:04  
-* component type diamond todo
+* component type diamond deleted and recovered on 2018-11-28 15:51:46    
 
 2018-11-19 10:50:35 
 * default esl size when creating a new template on start page done
@@ -388,7 +392,7 @@ Graph.js: 1618
 Graph.prototype.getPageSize = function()
 
 2018-11-20 10:55:43
-* component type diamond// remove it
+* component type diamond// remove it and recover it on 2018-11-28 15:51:57  
 * rhombus app.min.js 33757
 
 2018-11-20 14:45:45 todo
@@ -396,7 +400,7 @@ add barcode
 add logo
 
 Which part of src is for "Paper Size"?
-app.mion.js 34775 
+app.min.js 34775 
 formatContainer
 
 https://stackoverflow.com/questions/45205746/draw-io-is-there-non-minified-source
@@ -410,7 +414,46 @@ After Feb, new requirement
 the template designer: 12 million / year 
 </conceal>
 
-2018-11-26 10:42:27 
-exportXml: 8393
-mxClient:23
+2018-11-26 10:42:27, 2018-11-28 09:29:46    
+exportXml: 8393, 77609
+mxResources = mxClient: 263 - 352
 decode, encode, encipher. 
+uncompressed code is in 
+src\main\webapp\js\diagramly\Menus.js : 161
+MxGraph: JavaScript 建模工具，
+
+d:\work\templateGenerator\drawio\uncompressed\mxClient.js 
+1254 - 1699
+added exportJson 
+2018-11-28 10:18:19 changed logo icon, bg color changed
+2018-11-28 12:40:15 tab icon changed
+menubarContainer
+generate sams' club diamond svg
+f18808 => ffffff
+2018-11-28 13:39:44 
+exportJson done
+a.downloadFile("json", c ? !g.checked : null, null, true, c ? null : !g.checked) }),null,mxResources.get("export"));
+is from menus.js
+var dlg = new CustomDialog(editorUi, div, mxUtils.bind(this, function()
+{
+editorUi.downloadFile('xml', (noPages) ? !pages.checked : null, null, !selection.checked, (!noPages) ? !pages.checked : null); }), null, mxResources.get('export'));
+
+editorUi.showDialog(dlg.container, 300, 146, true, true);
+}));
+is from diagramly/EditorUi.js:1075
+EditorUi.prototype.downloadFile = function(format, nonCompressed, addShadow, ignoreSelection, currentPage, pageVisible, transparent)
+==
+app.min.js:66284
+EditorUi.prototype.downloadFile = function(format, nonCompressed, addShadow, ignoreSelection, currentPage, pageVisible, transparent)
+
+default compressed xml done
+other repos has json export? no
+
+2018-11-28 15:53:08 
+why rectangle has fieldType, but rhombus hasn't todo
+currentPrice
+app.min.js
+52905
+
+== todo
+comic remove

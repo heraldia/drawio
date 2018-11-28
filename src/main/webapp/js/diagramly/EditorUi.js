@@ -1080,7 +1080,7 @@
 			var basename = this.getBaseFilename(!currentPage);
 			var filename = basename + '.' + format;
 			
-			if (format == 'xml')
+			if (format == 'xml') 
 			{
 		    	var data = '<?xml version="1.0" encoding="UTF-8"?>\n' +
 		    		((nonCompressed) ? mxUtils.getXml(this.editor.getGraphXml(ignoreSelection)) :
