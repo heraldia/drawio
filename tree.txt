@@ -404,7 +404,13 @@ https://jgraph.github.io/mxgraph/javascript/examples/grapheditor/www/index.html
 The full stack for draw.io is actually mxGraph->GraphEditor->draw.io.
 mxgraph.jar
 
+<conceal>
 black friday to Febrary freeze everything. 
 After Feb, new requirement
-12 million / year 
+the template designer: 12 million / year 
+</conceal>
 
+2018-11-26 10:42:27 
+exportXml: 8393
+mxClient:23
+decode, encode, encipher. 
