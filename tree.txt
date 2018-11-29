@@ -1,9 +1,12 @@
 !git pull
 !git commit -m "pc after holiday"
 !git add .
-!git push -u origin master
+git push -u origin master
 git log viewer.min.js
 git log ./src/main/webapp/js/atlas-viewer.min.js
+[Online JavaScript beautifier] 
+https://beautifier.io/ 
+
 [git 如何让单个文件回退到指定的版本 - Dominic_Xu的博客 - CSDN博客]
 https://blog.csdn.net/x1066988452/article/details/53782287
 git reset 80f2df1ce674e2e42f983b8cac21dc75b4d00c76 ./src/main/webapp/js/atlas-viewer.min.js
@@ -21,14 +24,31 @@ docker build -t draw .
 docker run -d -p 8888:8080 draw
 docker run -p 8888:8080 draw
 http://localhost:8888/draw/?local=1
+
+USAGE: {
+Use firefox
 http://localhost:8080/drawio/
-USAGE: 
-use firefox
-design template -> save to xml and json.
+
+Aim: design template -> save to xml and json.
 xml for recovering the template in webpage
-json for merge.
-demo import: d:\work\templateGenerator\testcase_drawio\costume.xml
+json for merge with real data.
+
+Demo agenda: 
+Manually design
+Save into xml
+Save into json
+
+import
+d:\work\templateGenerator\testcase_drawio\costume.xml
+
+import
 d:\work\templateGenerator\testcase_drawio\philps\PHILIPSGood.xml
+display d:\work\templateGenerator\testcase_drawio\philps\1635077_f520.jpg 
+edit
+save into xml /json
+display xml 
+display json
+}
 
 !python searchAwordInAFolder.py varSPACEmxResources
 !dot -Tpng relation.dot -o relation.png
@@ -83,15 +103,6 @@ docker rmi $(docker images | grep "^<none>" | awk "{print $3})
 要删除全部image的话
 docker rmi $(docker images -q)
 
-requirement {{{2 todo
-%a limited list of component [what kinds?]
-%what size of esl?
-format json 
-5. different digits in price to test
-6. gray out the template size after starting editing
-get the component types from backend.
-create another container running drools.org
-5. app.min.js default letter size 
 
 https://groups.google.com/forum/#!forum/drawio
 2018-10-22 13:05:52 where composed a xml file?
@@ -246,9 +257,6 @@ app.min.js
 a = (null != a ? a : 1) ? (new mxCodec(mxUtils.createXmlDocument())).encode(this.graph.getModel()) :
 this.graph.encodeCells(mxUtils.sortCells(this.graph.model.getTopmostCells(this.graph.getSelectionCells())));
 2018-11-02 15:14:51 Found google group
-
-[Online JavaScript beautifier] 
-https://beautifier.io/ 
 
 2018-11-05 10:40:12 Clean UI components
 -2018-11-05 10:45:44 Clean create page, failed todo
@@ -449,11 +457,68 @@ EditorUi.prototype.downloadFile = function(format, nonCompressed, addShadow, ign
 default compressed xml done
 other repos has json export? no
 
-2018-11-28 15:53:08 
+2018-11-29 09:08:39 demo in our group and Emma in standup meeting. Feedback: Good
+
+2018-11-28 15:53:08, 2018-11-29 10:20:04, 2018-11-29 14:55:20       
 why rectangle has fieldType, but rhombus hasn't todo
 currentPrice
-app.min.js
+app.min.js:
 52905
+35758: Sidebar.prototype.addGeneralPalette 
+Sidebar.prototype.addMiscPalette = function(a) {
 
-== todo
+ps: doesn't deal with "Edit Style"
+
+createVertexTemplateEntry
+Sidebar.js 3235
+Sidebar.prototype.createVertexTemplateEntry = function(style, width, height, value, title, showLabel, showTitle, tags)
+{
+	tags = (tags != null && tags.length > 0) ? tags : title.toLowerCase();
+	
+	return this.addEntry(tags, mxUtils.bind(this, function()
+ 	{
+ 		return this.createVertexTemplate(style, width, height, value, title, showLabel, showTitle);
+ 	}));
+}
+Rectangle : 64246 mxCellRenderer.defaultShapes.label.prototype.customProperties = [{
+Rhombus : 63976 
+ mxCellRenderer.defaultShapes.rhombus.prototype.customProperties = [{
+done
+
+2018-11-29 15:37:40 
+i18n remain here
+delete "help" in menu line
+this.put("help", new Menu(mxUtils.bind(this, function(b, c) {
+- mxEditor.prototype.showHelp = function(a) {
+
+- this.addAction("help", function() {
+        var a = "";
+        mxResources.isLanguageSupported(mxClient.language) && (a = "_" + mxClient.language);
+        b.openLink(RESOURCES_PATH + "/help" + a + ".html")
+    });
+ /*this.put("help", new Menu(mxUtils.bind(this, function(a, b) {
+        this.addMenuItems(a, ["help", "-", "about"])
+    })))*/
+AboutDialog
+aboutSams=About Sam's Club
+
+removed mathematicalTypesetting 201811291639    
+removed scratchpad 201811291640    
+
+
+================================== todo requirement {{{2 
+customized the UI
 comic remove
+copy d:\work\templateGenerator\drawio\src\main\webapp\js\app.min.js "c:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\js\app.min.js"
+copy d:\work\templateGenerator\drawio\src\main\webapp\resources\dia.txt "c:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\resources\"
+
+%a limited list of component [what kinds?]
+%what size of esl?
+format json 
+design with testcase
+5. different digits in price to test
+6. gray out the template size after starting editing
+get the component types from backend.
+create another container running drools.org
+5. app.min.js default letter size 
+

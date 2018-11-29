@@ -10,7 +10,7 @@ subgraph callFunction{
 "app.min.js" -> ":11644"-> "s:letter" -> "getTagsForStencil";
 "app.min.js" ->":11665"-> "s:letter" -> "createVertexTemplateEntry";
 "s:downloadFile" [shape = box];
-"s:downloadFile" -> "app.min.js" -> "EditorUi.js";
+"EditorUi.js" -> "app.min.js" ->"s:downloadFile" ;
 "app.min.js" -> ":2515" -> "createVertexTemplateEntry" -> "2517:" -> "createVertexTemplate" -> "2521: createVertexTemplateFromCells" -> "2472: createItem";
 //"app.min.js" -> ":2031" -> "A1 (594 mm x 841 mm)";
 //"atlas.min.js" -> ":2032" -> "A1 (594 mm x 841 mm)";
@@ -18,7 +18,7 @@ subgraph callFunction{
 "diagramly/EditorUi.js"->":1086:getGraphXml" -> "viewer.min.js";
 
 "app.min.js" -> "atlas.min.js" -> "atlas-view.min.js" -> "viewer.min.js" ->
-    "build/base.min.js"[label = "==", arrowhead="none" ];
+"build/base.min.js"[label = "==", arrowhead="none" ];
 
 "s:Paper Size" [shape = box];
 "s:Paper Size" -> "app.min.js" -> "2856" -> "addPaperSize";
@@ -48,9 +48,12 @@ subgraph callFunction{
 subgraph buildXml{
 node [style=filled];
 "delete" [shape = box];
-"shapes" -> "build/shapes.js" -> "shapes.min.js";
-"stencils" -> "build/shapes.js";
+"shapes/" -> "build/shapes.js" -> "shapes.min.js";
+"shapes/"  [shape = box];
+"stencils/"  [shape = box];
+"stencils/" -> "build/shapes.js";
 "Editor.js"->"grapheditor.min.js";
+"diagramly/" [shape = box];
 "diagramly/EditorUi.js"->"grapheditor.min.js";
 "grapheditor/EditorUi.js"->"grapheditor.min.js";
 "Sidebar.js"->"grapheditor.min.js";
@@ -61,11 +64,11 @@ node [style=filled];
 "Menus.js"->"grapheditor.min.js";
 "Toolbar.js"->"grapheditor.min.js";
 "Dialogs.js"->"grapheditor.min.js";
-"diagramly"->"sidebar.min.js";
-"diagramly"-> "diagramly/EditorUi.js";
-"diagramly"-> "diagramly/Init.js";
-"diagramly"->"extensions.min.js";
-"vsdx"->"extensions.min.js";
+"diagramly/"->"sidebar.min.js";
+"diagramly/"-> "diagramly/EditorUi.js";
+"diagramly/"-> "diagramly/Init.js";
+"diagramly/"->"extensions.min.js";
+"vsdx/"->"extensions.min.js";
 "deflate/base64.js"->"client.min.js";
 "diagramly/Init.js"->"client.min.js";
 "mxgraph/mxClient.js"->"client.min.js";
