@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "pc after holiday"
+!git commit -m "after a good demo day"
 !git add .
 git push -u origin master
 git log viewer.min.js
