@@ -1,7 +1,7 @@
 !git pull
-!git commit -m "after a good demo day"
+!git commit -m "clean up and works"
 !git add .
-git push -u origin master
+!git push -u origin master
 git log viewer.min.js
 git log ./src/main/webapp/js/atlas-viewer.min.js
 [Online JavaScript beautifier] 
@@ -505,6 +505,26 @@ aboutSams=About Sam's Club
 removed mathematicalTypesetting 201811291639    
 removed scratchpad 201811291640    
 
+2018-12-03 14:08:55 
+Blank Diagram => Price Tag
+removed "Help" in "new price Tag diagram" 201812031418 safe
+removed "Help" in "Save diagrams to:" SplashDialog
+201812031424 safe
+201812031425 safe
+201812031427 safe
+
+removed "More Shapes..." in SideBar
+201812031433 safe
+
+removed "Theme -> Minimal" under Extras Menu
+201812031440 safe
+
+removed "File -> Embed" 201812031458    revoked
+removed "File -> Publish" 201812031456 revoked
+/New Library/Open Library from" 201812031501 revoked
+201812031502 safe
+
+cannot create a esl template -> revoke every changes today [fixed]
 
 ================================== todo requirement {{{2 
 customized the UI
@@ -521,4 +541,5 @@ design with testcase
 get the component types from backend.
 create another container running drools.org
 5. app.min.js default letter size 
+
 
