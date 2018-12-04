@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "clean up and works"
+!git commit -m "default template for component"
 !git add .
 !git push -u origin master
 git log viewer.min.js
@@ -526,20 +526,36 @@ removed "File -> Publish" 201812031456 revoked
 
 cannot create a esl template -> revoke every changes today [fixed]
 
+2018-12-03 15:32:11 
+default UI
+mxSettings.setUi("");201812031536  no changes
+customized the UI theme
+
+2018-12-04 10:27:37 
+change http:\\ drawio => esltemplate
+todo
+
+2018-12-04 13:22:18 
+[nashwaan/xml-js: Converter utility between XML text and Javascript object / JSON text.]
+https://github.com/nashwaan/xml-js
+
+2018-12-04 16:27:12 
+add dollar and cent 35753
+Default positions for each component for quick set up
+
+%comic remove
+
 ================================== todo requirement {{{2 
-customized the UI
-comic remove
 copy d:\work\templateGenerator\drawio\src\main\webapp\js\app.min.js "c:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\js\app.min.js"
 copy d:\work\templateGenerator\drawio\src\main\webapp\resources\dia.txt "c:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\drawio\resources\"
 
 %a limited list of component [what kinds?]
 %what size of esl?
-format json 
-design with testcase
 5. different digits in price to test
+design with testcase
+format json 
 6. gray out the template size after starting editing
 get the component types from backend.
 create another container running drools.org
 5. app.min.js default letter size 
-
 
