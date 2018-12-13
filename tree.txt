@@ -1,5 +1,5 @@
 !git pull
-!git commit -m "default template for component"
+!git commit -m "alienware before ia"
 !git add .
 !git push -u origin master
 git log viewer.min.js
@@ -43,7 +43,8 @@ d:\work\templateGenerator\testcase_drawio\costume.xml
 
 import
 d:\work\templateGenerator\testcase_drawio\philps\PHILIPSGood.xml
-display d:\work\templateGenerator\testcase_drawio\philps\1635077_f520.jpg 
+display 
+d:\work\templateGenerator\testcase_drawio\philps\1635077_f520.jpg 
 edit
 save into xml /json
 display xml 
